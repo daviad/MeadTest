@@ -3,12 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>FoundWorkingCopyPaths</key>
-	<array/>
+	<array>
+		<string>/Users/dingxiuwei/Desktop/例子/MeadTest</string>
+	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2013-03-22T15:39:53Z</date>
+	<date>2013-03-23T03:09:22Z</date>
 	<key>MissingFilePaths</key>
 	<array>
 		<string>/Users/yefeng/Desktop/MediaWS/RTPLib/build/Release-iphoneos/libRTPLib.a</string>
+		<string>/Users/dingxiuwei/Desktop/例子/MeadTest/MediaWS/RTPLib/build/Release-iphoneos/libRTPLib.a</string>
 	</array>
 	<key>Version</key>
 	<integer>4</integer>
