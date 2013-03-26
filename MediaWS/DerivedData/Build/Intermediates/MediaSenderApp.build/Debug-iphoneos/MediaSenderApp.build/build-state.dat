@@ -1,810 +1,0 @@
-TMediaSenderApp
-v5
-r1
-cCheck dependencies
-cCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist
-cProcessInfoPlistFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Info.plist MediaSenderApp/MediaSenderApp-Info.plist
-cProcessPCH /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cProcessPCH++ /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.o /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.o /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp normal armv7
-cGenerateDSYMFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp
-cCopyStringsFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/en.lproj/InfoPlist.strings MediaSenderApp/en.lproj/InfoPlist.strings
-cCopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png MediaSenderApp/Default.png
-cCopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png MediaSenderApp/Default@2x.png
-cCopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png MediaSenderApp/Default-568h@2x.png
-cCpResource ../RTPLib/RTPLib.xcodeproj /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeproj
-cProcessProductPackaging "/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision" /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision
-cProcessProductPackaging "/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision" /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision
-cTouch /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-cProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent
-cCodeSign /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk
-c0000000050ED385D0000000000000110
-t1357723741
-s272
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist
-c0000000050F4C99E00000000000001A7
-t1358219678
-s423
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist
-c0000000050F4C99E00000000000001E5
-t1358219678
-s485
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-c0000000050F4C9A6000000000036CDF0
-t1358219686
-s3591664
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
-c0000000050F4C9A5000000000003AE00
-t1358219685
-s241152
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-c0000000050F4C9A500000000006B1F40
-t1358219685
-s7020352
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-c0000000050F4C9A700000000000FE270
-t1358219687
-s1041008
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c0000000050F4C9A90000000000322700
-t1358219689
-s3286784
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
-c0000000050F4C9A90000000000228E60
-t1358219689
-s2264672
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
-c0000000050F4C9AA00000000001694D0
-t1358219690
-s1479888
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
-c0000000050F4C9AA0000000000041310
-t1358219690
-s267024
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c0000000050F4C9AB000000000062AD10
-t1358219691
-s6466832
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c0000000050F4C9AB00000000000015F7
-t1358219691
-s5623
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-c0000000050F4C9B0000000000012C360
-t1358219696
-s1229664
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-c0000000050F4C9B100000000003596B0
-t1358219697
-s3511984
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c0000000050F4C9B30000000000000E8D
-t1358219699
-s3725
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c0000000050F4C9B400000000011BCDF0
-t1358219700
-s18599408
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/include/Availability.h
-c0000000050F4C9C30000000000001B73
-t1358219715
-s7027
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libbz2.1.0.dylib
-c0000000050F4C9D3000000000001C1C0
-t1358219731
-s115136
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libc++.1.dylib
-c0000000050F4C9D30000000000135D50
-t1358219731
-s1269072
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libiconv.dylib
-c0000000050F4C9D300000000001F4F00
-t1358219731
-s2051840
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libstdc++.6.dylib
-c0000000050F4C9D40000000000151880
-t1358219732
-s1382528
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libz.1.2.5.dylib
-c0000000050F4C9D50000000000022520
-t1358219733
-s140576
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent
-t1363961491
-s428
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.o
-t1363963176
-s415752
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/MediaSenderApp.LinkFileList
-c00000000514C668F000000000000012D
-t1363961487
-s301
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.o
-t1363962117
-s3312
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.pth
-t1363961487
-s5395580
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.pth
-t1363961487
-s4597060
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-t1363963181
-s442
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM
-t1363963180
-s102
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png
-t1363961491
-s7014
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png
-t1363961491
-s3688
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png
-t1363961491
-s6316
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Info.plist
-t1363961487
-s1064
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp
-t1363963181
-s7235216
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/PkgInfo
-t1363961487
-s8
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeproj
-t1363961491
-s136
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist
-t1363961487
-s485
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision
-t1363961491
-s8809
-
-N/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/en.lproj/InfoPlist.strings
-t1363961490
-s42
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib.xcodeproj
-c00000000514C666F0000000000000088
-t1363961455
-s136
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcpcompoundpacket.h
-c0000000050C1AC2F0000000000001044
-t1354869807
-s4164
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcpcompoundpacketbuilder.h
-c0000000050C1AC310000000000002F86
-t1354869809
-s12166
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcppacket.h
-c0000000050C1AC360000000000000BB9
-t1354869814
-s3001
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcppacketbuilder.h
-c0000000050C1AC340000000000002E0A
-t1354869812
-s11786
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcpscheduler.h
-c0000000050C1AC310000000000001CBF
-t1354869809
-s7359
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcpsdesinfo.h
-c0000000050C1AC2F0000000000002072
-t1354869807
-s8306
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtcpsdespacket.h
-c0000000050C1AC350000000000002AA2
-t1354869813
-s10914
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpaddress.h
-c0000000050C1AC310000000000000DE9
-t1354869809
-s3561
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpcollisionlist.h
-c0000000050C1AC2F0000000000000C98
-t1354869807
-s3224
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpconfig.h
-c0000000050C1AC3300000000000008DA
-t1354869811
-s2266
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpdefines.h
-c000000005140731C0000000000000C1A
-t1363178268
-s3098
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtperrors.h
-c0000000050C1AC330000000000002B08
-t1354869811
-s11016
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtphashtable.h
-c0000000050C1AC30000000000000216C
-t1354869808
-s8556
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpipv4address.h
-c0000000050C1AC320000000000000FF7
-t1354869810
-s4087
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpipv4destination.h
-c0000000050C1AC2F0000000000000DF8
-t1354869807
-s3576
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpkeyhashtable.h
-c0000000050C1AC2F0000000000002288
-t1354869807
-s8840
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtplibraryversion.h
-c0000000050C1AC3600000000000009D1
-t1354869814
-s2513
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpmemorymanager.h
-c0000000050C1AC350000000000001E01
-t1354869813
-s7681
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpmemoryobject.h
-c0000000050C1AC350000000000000976
-t1354869813
-s2422
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtppacketbuilder.h
-c0000000050C1AC3400000000000028A3
-t1354869812
-s10403
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtprandom.h
-c0000000050C1AC310000000000000948
-t1354869809
-s2376
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpsession.h
-c0000000050C1AC340000000000006775
-t1354869812
-s26485
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpsessionparams.h
-c0000000050C1AC320000000000002ACD
-t1354869810
-s10957
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpsessionsources.h
-c0000000050C1AC2F0000000000000CF5
-t1354869807
-s3317
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpsources.h
-c0000000050C1AC2F000000000000457A
-t1354869807
-s17786
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpstructs.h
-c0000000050C1AC300000000000000B3E
-t1354869808
-s2878
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtptimeutilities.h
-c0000000050C1AC30000000000000217F
-t1354869808
-s8575
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtptransmitter.h
-c0000000050C1AC300000000000002D25
-t1354869808
-s11557
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtptypes.h
-c0000000050C1AC35000000000000002C
-t1354869813
-s44
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib/JRTPlib/rtpudpv4transmitter.h
-c0000000050C1AC350000000000002B25
-t1354869813
-s11045
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/build/Release-iphoneos/libRTPLib.a
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.h
-c00000000514C69040000000000000408
-t1363962116
-s1032
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm
-c00000000514C7BA400000000000052B0
-t1363966884
-s21168
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default-568h@2x.png
-c000000005094C3F800000000000048A2
-t1351926776
-s18594
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default.png
-c000000005094C3F8000000000000198C
-t1351926776
-s6540
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default@2x.png
-c000000005094C3F80000000000003EEB
-t1351926776
-s16107
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/MediaSenderApp-Prefix.pch
-c00000000514BBDF0000000000000014B
-t1363918320
-s331
-i<Availability.h>
-i<UIKit/UIKit.h>
-i<Foundation/Foundation.h>
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/en.lproj/InfoPlist.strings
-c00000000514BBDF0000000000000002D
-t1363918320
-s45
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavcodec/avcodec.h
-c0000000051429CC60000000000027763
-t1363320006
-s161635
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavcodec/old_codec_ids.h
-c0000000051429CC60000000000002987
-t1363320006
-s10631
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavcodec/version.h
-c0000000051429CC60000000000000C5D
-t1363320006
-s3165
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavformat/avformat.h
-c0000000051429CC60000000000013666
-t1363320006
-s79462
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavformat/avio.h
-c0000000051429CC600000000000042FB
-t1363320006
-s17147
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavformat/version.h
-c0000000051429CC60000000000000B08
-t1363320006
-s2824
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/attributes.h
-c0000000051429CC60000000000000F56
-t1363320006
-s3926
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/avconfig.h
-c0000000051429CC600000000000000D2
-t1363320006
-s210
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/avutil.h
-c0000000051429CC6000000000000155A
-t1363320006
-s5466
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/buffer.h
-c0000000051429CC6000000000000255C
-t1363320006
-s9564
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/channel_layout.h
-c0000000051429CC60000000000002208
-t1363320006
-s8712
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/common.h
-c0000000051429CC600000000000031CD
-t1363320006
-s12749
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/cpu.h
-c0000000051429CC600000000000010AE
-t1363320006
-s4270
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/dict.h
-c0000000051429CC60000000000001675
-t1363320006
-s5749
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/error.h
-c0000000051429CC60000000000001299
-t1363320006
-s4761
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/frame.h
-c0000000051429CC60000000000004609
-t1363320006
-s17929
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/intfloat.h
-c0000000051429CC600000000000006BA
-t1363320006
-s1722
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/intfloat_readwrite.h
-c0000000051429CC600000000000005D0
-t1363320006
-s1488
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/log.h
-c0000000051429CC60000000000001BD1
-t1363320006
-s7121
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/mathematics.h
-c0000000051429CC6000000000000126D
-t1363320006
-s4717
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/mem.h
-c0000000051429CC60000000000001E30
-t1363320006
-s7728
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/old_pix_fmts.h
-c0000000051429CC600000000000037EB
-t1363320006
-s14315
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/pixfmt.h
-c0000000051429CC60000000000005C58
-t1363320006
-s23640
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/rational.h
-c0000000051429CC60000000000000F67
-t1363320006
-s3943
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/samplefmt.h
-c0000000051429CC60000000000002577
-t1363320006
-s9591
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavutil/version.h
-c0000000051429CC60000000000000FB7
-t1363320006
-s4023
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libswscale/swscale.h
-c0000000051429CC60000000000002EF9
-t1363320006
-s12025
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libswscale/version.h
-c0000000051429CC60000000000000846
-t1363320006
-s2118
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavcodec.a
-c00000000514A638A000000000207C7F0
-t1363829642
-s34064368
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavdevice.a
-c00000000514A63870000000000010BC8
-t1363829639
-s68552
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavfilter.a
-c00000000514A6387000000000025B8F0
-t1363829639
-s2472176
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavformat.a
-c00000000514A6388000000000108ACC0
-t1363829640
-s17345728
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavutil.a
-c00000000514A638A0000000000095850
-t1363829642
-s612432
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libswresample.a
-c00000000514A638A000000000002F350
-t1363829642
-s193360
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libswscale.a
-c00000000514A638A00000000000CA130
-t1363829642
-s827696
-
-N/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m
-c00000000514BBDF0000000000000015A
-t1363918320
-s346
-
-N/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision
-c00000000513C26800000000000002269
-t1362896512
-s8809
-
-NMediaSenderApp/MediaSenderApp-Info.plist
-c00000000514BBDF00000000000000491
-t1363918320
-s1169
-
-CBuild AST from /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm
-r0
-
-CBuild AST from /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies3d9e4a25b3fcb641^666c5025b3fcb641^---0#1#0#--18"Check dependencies36"55836BA2-0630-4F99-A009-CE4928F4FA39-
-
-CCodeSign /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-s385659690.461488
-e385659692.368174
-r1
-xCodeSign
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"CodeSign /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app9b37762ab3fcb641^5f415e2cb3fcb641^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/0000000000000000^928"CodeSign /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/codesign --force --sign de292ae4e67064f874332f75bd6e8f7db418823f --resource-rules=/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist --entitlements /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app36"C42F5F8A-F868-4C00-B039-77B0CA3A004C-
-
-CCompileC /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.o /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s385659685.355489
-e385659686.733506
-r1
-xCompileC
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.o
-x/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm
-xnormal
-xarmv7
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:142:25: warning: format specifies type 'int' but the argument has type 'AVCodec *' [-Wformat]
-o    NSLog(@"codec = %i",codec);
-o                    ~~  ^~~~~
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:193:6: warning: 'finishWriting' is deprecated: first deprecated in iOS 6.0 [-Wdeprecated-declarations]
-o    [assetWriter finishWriting];
-o     ^
-o/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVAssetWriter.h:322:1: note: method 'finishWriting' declared here
-o- (BOOL)finishWriting NS_DEPRECATED(10_7, TBD, 4_1, 6_0);
-o^
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:425:55: warning: format specifies type 'int' but the argument has type 'unsigned char *' [-Wformat]
-o    NSLog(@"rawPixelBase = %i , rawPixelBase -s = %s",rawPixelBase, rawPixelBase);
-o                           ~~                         ^~~~~~~~~~~~
-o                           %s
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:453:25: warning: format specifies type 'int' but the argument has type 'AVCodec *' [-Wformat]
-o    NSLog(@"codec = %i",codec);
-o                    ~~  ^~~~~
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:530:16: warning: 'avcodec_encode_video' is deprecated [-Wdeprecated-declarations]
-o    out_size = avcodec_encode_video(c, outbuf, outbuf_size, outpic);
-o               ^
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavcodec/avcodec.h:4029:5: note: 'avcodec_encode_video' declared here
-oint avcodec_encode_video(AVCodecContext *avctx, uint8_t *buf, int buf_size,
-o    ^
-o/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:558:1: warning: control may reach end of non-void function [-Wreturn-type]
-o}
-o^
-o6 warnings generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mme1265b25b3fcb641^65c6bb26b3fcb641^-1961"/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:142:25: warning: format specifies type 'int' but the argument has type 'AVCodec *' [-Wformat]    NSLog(@"codec = %i",codec);                    ~~  ^~~~~/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:193:6: warning: 'finishWriting' is deprecated: first deprecated in iOS 6.0 [-Wdeprecated-declarations]    [assetWriter finishWriting];     ^/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVAssetWriter.h:322:1: note: method 'finishWriting' declared here- (BOOL)finishWriting NS_DEPRECATED(10_7, TBD, 4_1, 6_0);^/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:425:55: warning: format specifies type 'int' but the argument has type 'unsigned char *' [-Wformat]    NSLog(@"rawPixelBase = %i , rawPixelBase -s = %s",rawPixelBase, rawPixelBase);                           ~~                         ^~~~~~~~~~~~                           %s/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:453:25: warning: format specifies type 'int' but the argument has type 'AVCodec *' [-Wformat]    NSLog(@"codec = %i",codec);                    ~~  ^~~~~/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:530:16: warning: 'avcodec_encode_video' is deprecated [-Wdeprecated-declarations]    out_size = avcodec_encode_video(c, outbuf, outbuf_size, outpic);               ^/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavcodec/avcodec.h:4029:5: note: 'avcodec_encode_video' declared hereint avcodec_encode_video(AVCodecContext *avctx, uint8_t *buf, int buf_size,    ^/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm:558:1: warning: control may reach end of non-void function [-Wreturn-type]}^6 warnings generated.6(36%IDEClangDiagnosticActivityLogMessage2@65"Format specifies type 'int' but the argument has type 'AVCodec *'-385659686#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^141#24#141#24#2925#0#19"Format String Issue3(3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^141#20#141#22#2921#2#3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^141#24#141#29#2925#0#3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^141#20#141#22#2921#2#-2@58"'finishWriting' is deprecated: first deprecated in iOS 6.0-385659686#18446744073709551615#0#1(2@36"Method 'finishWriting' declared here-385659686#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@190"file://localhost/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVAssetWriter.h0000000000000000^321#0#321#0#14851#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^192#5#192#5#3461#0#12"Deprecations--2@71"Format specifies type 'int' but the argument has type 'unsigned char *'-385659686#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^424#54#424#54#10080#0#19"Format String Issue3(3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^424#54#424#66#10080#0#3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^424#27#424#29#10053#2#3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^424#27#424#29#10053#2#-2@65"Format specifies type 'int' but the argument has type 'AVCodec *'-385659686#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^452#24#452#24#10772#0#19"Format String Issue3(3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^452#20#452#22#10768#2#3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^452#24#452#29#10772#0#3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^452#20#452#22#10768#2#-2@36"'avcodec_encode_video' is deprecated-385659686#18446744073709551615#0#1(2@36"'avcodec_encode_video' declared here-385659686#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include/libavcodec/avcodec.h0000000000000000^4028#4#4028#4#135643#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^529#15#529#15#13516#0#12"Deprecations--2@42"Control may reach end of non-void function-385659686#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^557#0#557#0#14159#0#14"Semantic Issue--0#0#0#-19%DVTDocumentLocation4@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm0000000000000000^3787"CompileC /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.o MediaSenderApp/AppDelegate.mm normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch armv7 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility-inlines-hidden -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-generated-files.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-own-target-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-all-target-headers.hmap -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-project-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/include -I../RTPLib/RTPLib -I../RTPLib/RTPLib/JRTPlib -I../RTPLib/RTPLib/JRTPlib/extratransmitters -I../RTPLib/RTPLib/JRTPlib/jthread -I../RTPLib/RTPLib/JRTPlib/jthread/pthread -I/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources/armv7 -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources -F/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos -include /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch -MMD -MT dependencies -MF /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.d --serialize-diagnostics /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.dia -c /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/AppDelegate.mm -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/AppDelegate.o36"1A5A610B-6D4C-469F-B9D2-A48E6E865E34-
-
-CCompileC /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.o /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s385654917.415038
-e385654917.584101
-r1
-xCompileC
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.o
-x/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m3d646a85a0fcb641^3fc6a085a0fcb641^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m0000000000000000^3595"CompileC /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.o MediaSenderApp/main.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-generated-files.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-own-target-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-all-target-headers.hmap -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-project-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/include -I../RTPLib/RTPLib -I../RTPLib/RTPLib/JRTPlib -I../RTPLib/RTPLib/JRTPlib/extratransmitters -I../RTPLib/RTPLib/JRTPlib/jthread -I../RTPLib/RTPLib/JRTPlib/jthread/pthread -I/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources/armv7 -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources -F/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos -include /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch -MMD -MT dependencies -MF /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.d --serialize-diagnostics /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.dia -c /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/main.m -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/main.o36"F4F0DC97-FA1D-48C7-8DF6-75189FFDB0EF-
-
-CCopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png MediaSenderApp/Default-568h@2x.png
-s385654291.335203
-e385654291.423907
-r1
-xCopyPNGFile
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png
-xMediaSenderApp/Default-568h@2x.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection157"CopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png MediaSenderApp/Default-568h@2x.png32e355139efcb641^c2856c139efcb641^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default-568h@2x.png0000000000000000^711"CopyPNGFile "/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png" "MediaSenderApp/Default-568h@2x.png"    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" "/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default-568h@2x.png" "/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default-568h@2x.png"36"4535652B-F06C-449A-8196-55E33507D9F6-
-
-CCopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png MediaSenderApp/Default.png
-s385654290.981001
-e385654291.333226
-r1
-xCopyPNGFile
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png
-xMediaSenderApp/Default.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection141"CopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png MediaSenderApp/Default.png4832fb129efcb641^b14e55139efcb641^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default.png0000000000000000^671"CopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png MediaSenderApp/Default.png    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default.png /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default.png36"E498D278-E82D-45BE-A4D0-1AF9A9D322D0-
-
-CCopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png MediaSenderApp/Default@2x.png
-s385654291.155475
-e385654291.367718
-r1
-xCopyPNGFile
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png
-xMediaSenderApp/Default@2x.png
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection147"CopyPNGFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png MediaSenderApp/Default@2x.png84f527139efcb641^3a235e139efcb641^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default@2x.png0000000000000000^691"CopyPNGFile "/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png" "MediaSenderApp/Default@2x.png"    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress "" "/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/Default@2x.png" "/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Default@2x.png"36"CB0E728D-07E3-4C29-B2F4-826AAF4DFC2A-
-
-CCopyStringsFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/en.lproj/InfoPlist.strings MediaSenderApp/en.lproj/InfoPlist.strings
-s385654290.980376
-e385654291.152822
-r1
-xCopyStringsFile
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/en.lproj/InfoPlist.strings
-xMediaSenderApp/en.lproj/InfoPlist.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection46"Copy MediaSenderApp/en.lproj/InfoPlist.stringsd00ffb129efcb641^ff2327139efcb641^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/en.lproj/InfoPlist.strings0000000000000000^651"CopyStringsFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/en.lproj/InfoPlist.strings MediaSenderApp/en.lproj/InfoPlist.strings    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/en.lproj -- MediaSenderApp/en.lproj/InfoPlist.strings36"0E020A19-F06A-4D36-9389-42BE61DACE35-
-
-CCpResource ../RTPLib/RTPLib.xcodeproj /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeproj
-s385654291.370193
-e385654291.375716
-r1
-xCpResource
-x../RTPLib/RTPLib.xcodeproj
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeproj
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Copy /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeprojd3d85e139efcb641^302f60139efcb641^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeproj000000000080d041^661"CpResource ../RTPLib/RTPLib.xcodeproj /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/RTPLib.xcodeproj    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/yefeng/Desktop/MediaWS/MediaSenderApp/../RTPLib/RTPLib.xcodeproj /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app36"47E1225E-1C8E-4CBB-8D2B-32C5AE76F411-
-
-CCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist
-s385654287.070191
-e385654287.074272
-r1
-xCpResource
-x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Copy /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plistb70a120f9efcb641^0916130f9efcb641^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist000000000080d041^809"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app36"EA9735E1-76ED-49E9-84A9-87D61E725357-
-
-CGenerateDSYMFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp
-s385659687.477129
-e385659690.316395
-r1
-xGenerateDSYMFile
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Generate /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYMc13a7a27b3fcb641^86ff502ab3fcb641^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM/0000000000000000^764"GenerateDSYMFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app.dSYM36"FFABCD26-D21A-455A-B8C5-27513407A09F-
-
-CLd /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp normal armv7
-s385659686.742278
-e385659687.469824
-r1
-xLd
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp
-xnormal
-xarmv7
-old: warning: PIE disabled. Absolute addressing (perhaps -mdynamic-no-pic) not allowed in code signed PIE, but used in _zero12v_decode_frame from /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavcodec.a(012v.o). To fix this warning, don't compile with -mdynamic-no-pic or link with -Wl,-no_pie
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Link /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp001dbe26b3fcb641^20467827b3fcb641^-313"ld: warning: PIE disabled. Absolute addressing (perhaps -mdynamic-no-pic) not allowed in code signed PIE, but used in _zero12v_decode_frame from /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavcodec.a(012v.o). To fix this warning, don't compile with -mdynamic-no-pic or link with -Wl,-no_pie1(21%IDEActivityLogMessage2@299"PIE disabled. Absolute addressing (perhaps -mdynamic-no-pic) not allowed in code signed PIE, but used in _zero12v_decode_frame from /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib/libavcodec.a(012v.o). To fix this warning, don't compile with -mdynamic-no-pic or link with -Wl,-no_pie-385659687#0#313#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#27"Apple Mach-O Linker Warning--0#0#0#--1605"Ld /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp normal armv7    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch armv7 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -L/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos -L/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/lib -F/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos -filelist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/Objects-normal/armv7/MediaSenderApp.LinkFileList -dead_strip -fobjc-link-runtime -stdlib=libc++ -miphoneos-version-min=6.1 -framework CoreMedia -framework AssetsLibrary -framework CoreImage -framework CoreVideo -framework MobileCoreServices -framework QuartzCore -framework AudioToolbox -framework CoreAudio -framework AVFoundation -lstdc++.6 -lc++.1 -lRTPLib -lz.1.2.5 -lbz2.1.0 -liconv -framework UIKit -framework Foundation -framework CoreGraphics -lavcodec -lavdevice -lavfilter -lavformat -lavutil -lswresample -lswscale -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/MediaSenderApp36"A20FEEF1-C0AC-434B-B12F-0113BEB37DC6-
-
-CProcessInfoPlistFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Info.plist MediaSenderApp/MediaSenderApp-Info.plist
-s385654287.070690
-e385654287.076305
-r1
-xProcessInfoPlistFile
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Info.plist
-xMediaSenderApp/MediaSenderApp-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Process MediaSenderApp/MediaSenderApp-Info.plist6f2a120f9efcb641^ec88130f9efcb641^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/MediaSenderApp-Info.plist0000000000000000^875"ProcessInfoPlistFile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Info.plist MediaSenderApp/MediaSenderApp-Info.plist    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility MediaSenderApp/MediaSenderApp-Info.plist -genpkginfo /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/ResourceRules.plist -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/Info.plist36"55F014F4-EAF1-4247-A0C5-731DC97E14E1-
-
-CProcessPCH /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s385654287.086417
-e385654287.438316
-r1
-xProcessPCH
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.pth
-xMediaSenderApp/MediaSenderApp-Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile MediaSenderApp/MediaSenderApp-Prefix.pchbc3b160f9efcb641^4835700f9efcb641^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/MediaSenderApp-Prefix.pch0000000000000000^3531"ProcessPCH /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-generated-files.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-own-target-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-all-target-headers.hmap -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-project-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/include -I../RTPLib/RTPLib -I../RTPLib/RTPLib/JRTPlib -I../RTPLib/RTPLib/JRTPlib/extratransmitters -I../RTPLib/RTPLib/JRTPlib/jthread -I../RTPLib/RTPLib/JRTPlib/jthread/pthread -I/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources/armv7 -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources -F/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos --serialize-diagnostics /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.dia -c /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/MediaSenderApp-Prefix.pch -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.pth -MMD -MT dependencies -MF /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-fnqpevjpttnhlkdgtdtpwrlpkxfy/MediaSenderApp-Prefix.pch.d36"AF6A37CF-AE15-41EC-A592-8635EFF23C7E-
-
-CProcessPCH /Users/yefeng/Desktop/MediaWS/DerivedData/MediaWS/Index/PrecompiledHeaders/MediaSenderApp-Prefix-cyartbbkgsmngdcmdslbkcgtwskr_ast/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s385654287.087096
-e385654287.619098
-r1
-xProcessPCH++
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.pth
-xMediaSenderApp/MediaSenderApp-Prefix.pch
-xnormal
-xarmv7
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile MediaSenderApp/MediaSenderApp-Prefix.pch096c160f9efcb641^dd7d9e0f9efcb641^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/MediaSenderApp-Prefix.pch0000000000000000^3681"ProcessPCH++ /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch armv7 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility-inlines-hidden -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-generated-files.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-own-target-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-all-target-headers.hmap -iquote /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp-project-headers.hmap -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/include -I../RTPLib/RTPLib -I../RTPLib/RTPLib/JRTPlib -I../RTPLib/RTPLib/JRTPlib/extratransmitters -I../RTPLib/RTPLib/JRTPlib/jthread -I../RTPLib/RTPLib/JRTPlib/jthread/pthread -I/Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/include -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources/armv7 -I/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/DerivedSources -F/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos --serialize-diagnostics /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.dia -c /Users/yefeng/Desktop/MediaWS/MediaSenderApp/MediaSenderApp/MediaSenderApp-Prefix.pch -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.pth -MMD -MT dependencies -MF /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/PrecompiledHeaders/MediaSenderApp-Prefix-dzgfutijfetxhtfwqwsdmegtqjte/MediaSenderApp-Prefix.pch.d36"2AA1F94C-3383-4998-AC56-FE7434C487E9-
-
-CProcessPCH++ /Users/yefeng/Desktop/MediaWS/DerivedData/MediaWS/Index/PrecompiledHeaders/MediaSenderApp-Prefix-cpzdjgevpvxdelcxaohgvmkiotxg_ast/MediaSenderApp-Prefix.pch.pth MediaSenderApp/MediaSenderApp-Prefix.pch normal armv7 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessProductPackaging "/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision" /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision
-s385654291.450308
-e385654291.455140
-r1
-xProcessProductPackaging
-x/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection251"ProcessProductPackaging "/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision" /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovisionfb5a73139efcb641^1b8574139efcb641^---0#0#0#-19%DVTDocumentLocation2@131"file://localhost/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision0000000000000000^759"ProcessProductPackaging "/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision" /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility "/Users/yefeng/Library/MobileDevice/Provisioning Profiles/63F3C205-5144-462B-A89A-563340FC6C26.mobileprovision" -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app/embedded.mobileprovision36"F61A32D7-4877-4120-A606-03DC18C7FDD6-
-
-CProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent
-s385654291.484014
-e385654291.489289
-r1
-xProcessProductPackaging
-x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection284"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcentcefb7b139efcb641^4e427d139efcb641^---0#0#0#-19%DVTDocumentLocation2@155"file://localhost/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent000000000080d041^851"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Intermediates/MediaSenderApp.build/Debug-iphoneos/MediaSenderApp.build/MediaSenderApp.xcent36"3FFE4482-13EE-4AAB-A6D0-75928DB51DEE-
-
-CTouch /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-s385659690.368568
-e385659690.443407
-r1
-xTouch
-x/Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Touch /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app666a5e2ab3fcb641^b493712ab3fcb641^---0#0#0#--450"Touch /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app    cd /Users/yefeng/Desktop/MediaWS/MediaSenderApp    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/yefeng/Desktop/MediaWS/DerivedData/Build/Products/Debug-iphoneos/MediaSenderApp.app36"2461672E-61DC-4BE1-AE60-85D830F1EF83-
-
