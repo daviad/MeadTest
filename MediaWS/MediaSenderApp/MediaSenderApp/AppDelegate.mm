@@ -449,7 +449,7 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     printf("Video encoding\n");
     
     /* find the mpeg video encoder */
-    codec =avcodec_find_encoder(CODEC_ID_H261);//avcodec_find_encoder_by_name("libx264"); //avcodec_find_encoder(CODEC_ID_H264);//CODEC_ID_H264);
+    codec =avcodec_find_encoder(CODEC_ID_H264);//avcodec_find_encoder_by_name("libx264"); //avcodec_find_encoder(CODEC_ID_H264);//CODEC_ID_H264);
     NSLog(@"codec = %i",codec);
     if (!codec) {
         fprintf(stderr, "codec not found\n");
