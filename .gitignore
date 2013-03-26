@@ -1,29 +1,6 @@
-*.hmap
 
-*.d
-
-*.d
-
-*.dia
-
-*.xcindexdb-shm
-
-*.pth
-
-*.hash-criteria
-
-*.xcactivitylog
-
-*.xcindexdb-wal
-
-*.db
-
-*.xcbkptlist
-
-*.dep
 
 MediaWS/DerivedData/*
-
 MediaWS/MediaWS.xcworkspace/xcuserdata/*
 
 
