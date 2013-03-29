@@ -625,6 +625,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(pixelBuffer, 0);
     
+    
+    NSLog(@"data from cameral:%@",sampleBuffer);
+    
+    
     // access the data
     int width = CVPixelBufferGetWidth(pixelBuffer);
     int height = CVPixelBufferGetHeight(pixelBuffer);
@@ -687,8 +691,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     /* encode the image */
     
-    out_size = avcodec_encode_video(codecContext, outbuf, outbuf_size, outpic);
-    
+   // out_size = avcodec_encode_video(codecContext, outbuf, outbuf_size, outpic);
+    out_size = avcodec_encode_video(codecContext, outbuf, outbuf_size, pFrame);
+
     printf("encoding frame (size=%5d)\n", out_size);
     printf("encoding frame %s\n", outbuf);
     

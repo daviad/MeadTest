@@ -32,15 +32,6 @@
 		E456041216FBF5B100DA6247 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E456041116FBF5B100DA6247 /* libiconv.dylib */; };
 		E456050616FC043800DA6247 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E456050516FC043800DA6247 /* libbz2.1.0.dylib */; };
 		E456050816FC046800DA6247 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E456050716FC046800DA6247 /* libz.1.2.5.dylib */; };
-		E4C79FA01701758C00C86D47 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F981701758C00C86D47 /* libavcodec.a */; };
-		E4C79FA11701758C00C86D47 /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F991701758C00C86D47 /* libavdevice.a */; };
-		E4C79FA21701758C00C86D47 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F9A1701758C00C86D47 /* libavfilter.a */; };
-		E4C79FA31701758C00C86D47 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F9B1701758C00C86D47 /* libavformat.a */; };
-		E4C79FA41701758C00C86D47 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F9C1701758C00C86D47 /* libavutil.a */; };
-		E4C79FA51701758C00C86D47 /* libpostproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F9D1701758C00C86D47 /* libpostproc.a */; };
-		E4C79FA61701758C00C86D47 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F9E1701758C00C86D47 /* libswresample.a */; };
-		E4C79FA71701758C00C86D47 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79F9F1701758C00C86D47 /* libswscale.a */; };
-		E4C79FA91701760A00C86D47 /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C79FA81701760A00C86D47 /* libx264.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,15 +189,6 @@
 				E45603F316FBF57000DA6247 /* UIKit.framework in Frameworks */,
 				E45603F516FBF57000DA6247 /* Foundation.framework in Frameworks */,
 				E45603F716FBF57000DA6247 /* CoreGraphics.framework in Frameworks */,
-				E4C79FA01701758C00C86D47 /* libavcodec.a in Frameworks */,
-				E4C79FA11701758C00C86D47 /* libavdevice.a in Frameworks */,
-				E4C79FA21701758C00C86D47 /* libavfilter.a in Frameworks */,
-				E4C79FA31701758C00C86D47 /* libavformat.a in Frameworks */,
-				E4C79FA41701758C00C86D47 /* libavutil.a in Frameworks */,
-				E4C79FA51701758C00C86D47 /* libpostproc.a in Frameworks */,
-				E4C79FA61701758C00C86D47 /* libswresample.a in Frameworks */,
-				E4C79FA71701758C00C86D47 /* libswscale.a in Frameworks */,
-				E4C79FA91701760A00C86D47 /* libx264.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +592,7 @@
 		E456040D16FBF57000DA6247 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaSenderApp/MediaSenderApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -620,8 +603,21 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MediaSenderApp/lib\"",
+					"\"$(SRCROOT)/../FFmpegLib/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lavcodec",
+					"-lavdevice",
+					"-lavfilter",
+					"-lavformat",
+					"-lavutil",
+					"-lpostproc",
+					"-lswresample",
+					"-lswscale",
+					"-lx264",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -629,6 +625,7 @@
 		E456040E16FBF57000DA6247 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaSenderApp/MediaSenderApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -639,8 +636,21 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MediaSenderApp/lib\"",
+					"\"$(SRCROOT)/../FFmpegLib/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-lavcodec",
+					"-lavdevice",
+					"-lavfilter",
+					"-lavformat",
+					"-lavutil",
+					"-lpostproc",
+					"-lswresample",
+					"-lswscale",
+					"-lx264",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
