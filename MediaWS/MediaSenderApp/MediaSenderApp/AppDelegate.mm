@@ -223,6 +223,36 @@ initError:
 
 
 
+-(UIImage*)makeUIImageWithAVPicture:(AVPicture*)avPic withWidth:(CGFloat)nWidth withHeight:(CGFloat)nHeight
+{
+    CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault;
+    CFDataRef data = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, avPic->data[0], nWidth*nHeight*3,kCFAllocatorNull);
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData(data);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    CGImageRef cgImage = CGImageCreate(nWidth,
+                                       nHeight,
+                                       8,
+                                       24,
+                                       nWidth*3,
+                                       colorSpace,
+                                       bitmapInfo,
+                                       provider,
+                                       NULL,
+                                       YES,
+                                       kCGRenderingIntentDefault);
+    CGColorSpaceRelease(colorSpace);
+ 
+    UIImage* image = [[UIImage alloc]initWithCGImage:cgImage];   //crespo modify 20111020
+    CGImageRelease(cgImage);
+    CGDataProviderRelease(provider);
+    CFRelease(data);
+   
+    return [image autorelease];
+
+}
+
+
 -(void)xx
 {
     AVCodec  *pCodec;
@@ -573,8 +603,8 @@ void checkerror(int err)
     c->bit_rate_tolerance = 10;
     c->me_method = 8;//2;
     /* resolution must be a multiple of two */
-    c->width = 352;//width;//352;
-    c->height = 288;//height;//288;
+    c->width = 1920;//width;//352;
+    c->height = 1080;//height;//288;
     /* frames per second */
     c->time_base= (AVRational){1,25};
     c->gop_size = 10;//25; /* emit one intra frame every ten frames */
@@ -629,18 +659,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         return;
     }
     
-    //  UIImage* image = [UIImage imageNamed:@"DownAccessory"];
-    //    imageToBuffer(sampleBuffer);
-    //        NSData  *imageData =[@"123" dataUsingEncoding:NSUTF8StringEncoding];  // UIImagePNGRepresentation(image);
-    //        NSData *data = imageData;
-    //        sess.SendPacket([data bytes], data.length);
-    //        NSLog(@"sender data:%d",data.length); //336
-    
-    
     
     CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(pixelBuffer, 0);
-    
     
     NSLog(@"data from cameral:%@",sampleBuffer);
     
@@ -650,13 +671,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     int height = CVPixelBufferGetHeight(pixelBuffer);
     unsigned char *rawPixelBase = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
     
-    AVFrame *pFrame;
-    pFrame = avcodec_alloc_frame();
-    pFrame->quality = 1;
-    
-    NSLog(@"pFrame = avcodec_alloc_frame(); ");
-    
-    
+    AVFrame *yuvFrame;
+    yuvFrame = avcodec_alloc_frame();
+   // yuvFrame->quality = 1;
     
     
 //    
@@ -714,76 +731,66 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //    picture->linesize[0] = c->width;
 //    picture->linesize[1] = c->width / 2;
 //    picture->linesize[2] = c->width / 2;
-    int avpicture_fillNum = avpicture_fill((AVPicture*)pFrame, rawPixelBase, PIX_FMT_YUV420P, width, height);//PIX_FMT_RGB32//PIX_FMT_RGB8
-    
-   // printImage(rawPixelBase, width, height);
-    
-
-    
-    
-    
-    
+    int avpicture_fillNum = avpicture_fill((AVPicture*)yuvFrame, rawPixelBase, PIX_FMT_YUV420P, width, height);//PIX_FMT_RGB32//PIX_FMT_RGB8
+   // printImage(rawPixelBase, width, height);    
     NSLog(@"rawPixelBase = %i , rawPixelBase -s = %s",rawPixelBase, rawPixelBase);
     NSLog(@"avpicture_fill = %i",avpicture_fillNum);
     NSLog(@"width = %i,height = %i",width, height);
-    
-    
-    
-    // Do something with the raw pixels here
-    
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
-    
-    
-    
-    int  out_size, size, outbuf_size;
-    
-    uint8_t *outbuf;
-    
-    printf("Video encoding  per frame \n");
-    
-    /* alloc image and output buffer */
-    outbuf_size = 100000;
-    outbuf = (uint8_t *) malloc(outbuf_size);
-    
-//    size = codecContext->width * codecContext->height;
-//    
-//    AVFrame* outpic = avcodec_alloc_frame();
-//    int nbytes = avpicture_get_size(PIX_FMT_YUV420P, codecContext->width, codecContext->height);
-//    
-//    //create buffer for the output image
-//    uint8_t* outbuffer = (uint8_t*)av_malloc(nbytes);
-//    
-//#pragma mark -
-//    
-//    fflush(stdout);
-//    
-//    
-//    avpicture_fill((AVPicture*)outpic, outbuffer, PIX_FMT_YUV420P, codecContext->width, codecContext->height);
-//    
-//    struct SwsContext* fooContext = sws_getContext(codecContext->width, codecContext->height,
-//                                                   PIX_FMT_RGB8,
+  
+//以上得到了ffmpeg形式的yuv格式的数据yuvFrame
+    NSLog(@"以上得到了ffmpeg形式的yuv格式的数据yuvFrame:%@",yuvFrame);
+
+////    改变原始yuv的大小
+//   struct SwsContext* scaleContext = sws_getContext(width, height,
+//                                                   PIX_FMT_YUV420P,
 //                                                   codecContext->width, codecContext->height,
 //                                                   PIX_FMT_YUV420P,
 //                                                   SWS_FAST_BILINEAR, NULL, NULL, NULL);
-//    
-//    //perform the conversion
-//    sws_scale(fooContext, pFrame->data, pFrame->linesize, 0, codecContext->height, outpic->data, outpic->linesize);
-//    // Here is where I try to convert to YUV
+//    sws_scale(scaleContext, pFrame->data, pFrame->linesize, 0, pFrame->height, <#uint8_t *const *dst#>, <#const int *dstStride#>)
     
-    /* encode the image */
-    
-   // out_size = avcodec_encode_video(codecContext, outbuf, outbuf_size, outpic);
-   out_size = avcodec_encode_video(codecContext, outbuf, outbuf_size, pFrame);
 
-    printf("encoding frame (size=%5d)\n", out_size);
-    printf("encoding frame %s\n", outbuf);
     
- //   NSArray * paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//   将原始的yuv 改为rgb24
+    AVFrame *rgbFrame = av_frame_alloc();
+    int rgbbytes = avpicture_get_size(PIX_FMT_RGB24, codecContext->width, codecContext->height);
+    uint8_t  *rgbBuf = (uint8_t*)av_malloc(rgbbytes);
+    avpicture_fill((AVPicture*)rgbFrame, rgbBuf, PIX_FMT_RGB24, codecContext->width, codecContext->height);
+
+    struct SwsContext* rgbSwsContext = sws_getContext(codecContext->width, codecContext->height,
+                                                     PIX_FMT_YUV420P,
+                                                     codecContext->width, codecContext->height,
+                                                     PIX_FMT_RGB24,
+                                                     SWS_FAST_BILINEAR, NULL, NULL, NULL);
+    sws_scale(rgbSwsContext, yuvFrame->data, yuvFrame->linesize, 0, codecContext->height, rgbFrame->data, rgbFrame->linesize);
+    
+    [self makeUIImageWithAVPicture:(AVPicture *)rgbFrame withWidth:codecContext->width withHeight:codecContext->height];
+    
+    
+    printf("Video encoding  per frame \n");
+    //    将yuv用h246编码
+    uint8_t *h264YuvBuf;
+    int yuvbytes = avpicture_get_size(PIX_FMT_YUV420P, codecContext->width, codecContext->height);
+    h264YuvBuf = (uint8_t*)av_malloc(yuvbytes);
+    int retH264Yuv = avcodec_encode_video(codecContext, h264YuvBuf, yuvbytes, yuvFrame);
+    if(retH264Yuv<0)
+    {
+        NSLog(@"yuv h264 ecode fail :%d",retH264Yuv);
+    }
+    else
+    {
+        NSLog(@"YUV H264 ecode sucessus:%d",retH264Yuv);
+    }
+    
+    
+    
+    
+   //   NSArray * paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
    // NSString *doc = [paths objectAtIndex:0];
 //    static int i = 0;
-    if (out_size>0)
-    {
-      sess.SendPacket(outbuf, out_size);
+ //   if (out_size>0)
+//    {
+  //    sess.SendPacket(outbuf, out_size);
        
         
 //        NSData *data = [NSData dataWithBytes:outbuf length:out_size];
@@ -791,15 +798,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //        i++;
         
         
-        [self decodeAndShow:(char*)outbuf length:out_size andTimeStamp:111111];
+    //    [self decodeAndShow:(char*)outbuf length:out_size andTimeStamp:111111];
         
-    }
+//    }
     
    // free(outbuf);
     
     
-    av_free(pFrame);
-    printf("\n");
+//    av_free(pFrame);
+
     
 }
 
