@@ -114,9 +114,9 @@ using namespace jrtplib;
     
     pFrameRec=avcodec_alloc_frame();
     
-    //    pCodecCtx->width = 640;
-    //    pCodecCtx->height = 480;
-    //    pCodecCtx->pix_fmt = PIX_FMT_YUV420P;
+        pCodecCtxRec->width = 640;
+        pCodecCtxRec->height = 480;
+    //    pCodecCtxRec->pix_fmt = PIX_FMT_YUV420P;
     NSLog(@"init success");
     return;
     
@@ -152,13 +152,21 @@ initError:
     
     // Setup scaler
     static int sws_flags =  SWS_FAST_BILINEAR;
-    img_convert_ctxRec = sws_getContext(pCodecCtxRec->width,
-                                     pCodecCtxRec->height,
-                                     pCodecCtxRec->pix_fmt,
-                                     pCodecCtxRec->width,
-                                     pCodecCtxRec->height,
-                                     PIX_FMT_RGB24,
-                                     sws_flags, NULL, NULL, NULL);
+//    img_convert_ctxRec = sws_getContext(pCodecCtxRec->width,
+//                                     pCodecCtxRec->height,
+//                                     pCodecCtxRec->pix_fmt,
+//                                     pCodecCtxRec->width,
+//                                     pCodecCtxRec->height,
+//                                     PIX_FMT_RGB24,
+//                                     sws_flags, NULL, NULL, NULL);
+    
+    img_convert_ctxRec = sws_getContext(1920,
+                                        1080,
+                                        PIX_FMT_YUV420P,
+                                       1920,
+                                        1080,
+                                        PIX_FMT_RGB24,
+                                        sws_flags, NULL, NULL, NULL);
     
 }
 
@@ -739,7 +747,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
   
 //以上得到了ffmpeg形式的yuv格式的数据yuvFrame
-    NSLog(@"以上得到了ffmpeg形式的yuv格式的数据yuvFrame:%@",yuvFrame);
+//    NSLog(@"以上得到了ffmpeg形式的yuv格式的数据yuvFrame:%@",yuvFrame);
 
 ////    改变原始yuv的大小
 //   struct SwsContext* scaleContext = sws_getContext(width, height,
@@ -749,7 +757,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //                                                   SWS_FAST_BILINEAR, NULL, NULL, NULL);
 //    sws_scale(scaleContext, pFrame->data, pFrame->linesize, 0, pFrame->height, <#uint8_t *const *dst#>, <#const int *dstStride#>)
     
-
+ 
     
 //   将原始的yuv 改为rgb24
     AVFrame *rgbFrame = av_frame_alloc();
@@ -764,8 +772,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                      SWS_FAST_BILINEAR, NULL, NULL, NULL);
     sws_scale(rgbSwsContext, yuvFrame->data, yuvFrame->linesize, 0, codecContext->height, rgbFrame->data, rgbFrame->linesize);
     
-    [self makeUIImageWithAVPicture:(AVPicture *)rgbFrame withWidth:codecContext->width withHeight:codecContext->height];
-    
+   UIImage *tep =  [self makeUIImageWithAVPicture:(AVPicture *)rgbFrame withWidth:codecContext->width withHeight:codecContext->height];
+   // [self performSelectorOnMainThread:@selector(updateView:) withObject:tep waitUntilDone:YES];
     
     printf("Video encoding  per frame \n");
     //    将yuv用h246编码
@@ -780,6 +788,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     else
     {
         NSLog(@"YUV H264 ecode sucessus:%d",retH264Yuv);
+        
+        //将yuv h264 decode 为 yuv --》rgb
+     [self decodeAndShow:(char*)h264YuvBuf length:yuvbytes andTimeStamp:111111];
+
     }
     
     
