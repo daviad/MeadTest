@@ -60,10 +60,11 @@ using namespace jrtplib;
     
     AVCodecContext *codecContext;
     
-    dispatch_queue_t  sendQueue;
+    dispatch_queue_t  videoQueue;
+    dispatch_queue_t  audioQueue;
     
     
-     AVCodecContext     *pCodecCtx;
+    AVCodecContext     *pCodecCtx;
     
     
     AVCodec            *pCodecRec;
@@ -73,7 +74,7 @@ using namespace jrtplib;
     AVPicture          pictureRec;
     struct SwsContext  *img_convert_ctxRec;
     
-     UIImageView *imgView;
+    UIImageView *imgView;
 }
 
 @end
@@ -114,8 +115,8 @@ using namespace jrtplib;
     
     pFrameRec=avcodec_alloc_frame();
     
-        pCodecCtxRec->width = 640;
-        pCodecCtxRec->height = 480;
+    pCodecCtxRec->width = 640;
+    pCodecCtxRec->height = 480;
     //    pCodecCtxRec->pix_fmt = PIX_FMT_YUV420P;
     NSLog(@"init success");
     return;
@@ -152,18 +153,18 @@ initError:
     
     // Setup scaler
     static int sws_flags =  SWS_FAST_BILINEAR;
-//    img_convert_ctxRec = sws_getContext(pCodecCtxRec->width,
-//                                     pCodecCtxRec->height,
-//                                     pCodecCtxRec->pix_fmt,
-//                                     pCodecCtxRec->width,
-//                                     pCodecCtxRec->height,
-//                                     PIX_FMT_RGB24,
-//                                     sws_flags, NULL, NULL, NULL);
+    //    img_convert_ctxRec = sws_getContext(pCodecCtxRec->width,
+    //                                     pCodecCtxRec->height,
+    //                                     pCodecCtxRec->pix_fmt,
+    //                                     pCodecCtxRec->width,
+    //                                     pCodecCtxRec->height,
+    //                                     PIX_FMT_RGB24,
+    //                                     sws_flags, NULL, NULL, NULL);
     
     img_convert_ctxRec = sws_getContext(1920,
                                         1080,
                                         PIX_FMT_YUV420P,
-                                       1920,
+                                        1920,
                                         1080,
                                         PIX_FMT_RGB24,
                                         sws_flags, NULL, NULL, NULL);
@@ -250,14 +251,14 @@ initError:
                                        YES,
                                        kCGRenderingIntentDefault);
     CGColorSpaceRelease(colorSpace);
- 
+    
     UIImage* image = [[UIImage alloc]initWithCGImage:cgImage];   //crespo modify 20111020
     CGImageRelease(cgImage);
     CGDataProviderRelease(provider);
     CFRelease(data);
-   
+    
     return [image autorelease];
-
+    
 }
 
 
@@ -302,10 +303,10 @@ initError:
         
     }
     
-//    检查视频流的信息，通过调用av_find_stream_info（pFormatCtx）函数，pFormatCtx-》streams 就填充了正确的视频流信息，pFormatCtx 类型是AVFormatContext.
-//    
-//    （4） 得到编解码器上下文，pCodecCtx= pFormatCtx -》 streams［videoStream］-》codec，pCodecCtx 指针指向了流中所使用的关于编解码器的所有信息。
-
+    //    检查视频流的信息，通过调用av_find_stream_info（pFormatCtx）函数，pFormatCtx-》streams 就填充了正确的视频流信息，pFormatCtx 类型是AVFormatContext.
+    //
+    //    （4） 得到编解码器上下文，pCodecCtx= pFormatCtx -》 streams［videoStream］-》codec，pCodecCtx 指针指向了流中所使用的关于编解码器的所有信息。
+    
     //get a pointer to the codec contenxt for the video stream
     pCodecCtx = pFormaterCtx ->streams[videoStream] ->codec;
     
@@ -374,7 +375,8 @@ void checkerror(int err)
     
     avcodec_close(codecContext);
     av_free(codecContext);
-    dispatch_release(sendQueue);
+    dispatch_release(videoQueue);
+    dispatch_release(audioQueue);
     [_window release];
     [super dealloc];
 }
@@ -557,9 +559,9 @@ void checkerror(int err)
                                           init];
     videoOut.alwaysDiscardsLateVideoFrames = YES;
     
-  
-    sendQueue = dispatch_queue_create("frameDataOutputQueue", NULL);
-    [videoOut setSampleBufferDelegate:self queue:sendQueue];
+    
+    videoQueue = dispatch_queue_create("frameDataOutputVideoQueue", NULL);
+    [videoOut setSampleBufferDelegate:self queue:videoQueue];
     
     
     
@@ -567,6 +569,14 @@ void checkerror(int err)
 	videoConnection = [videoOut connectionWithMediaType:AVMediaTypeVideo];
     [videoOut release];
     
+    
+    
+    //audio
+    AVCaptureAudioDataOutput *audioOut = [[AVCaptureAudioDataOutput alloc] init];
+    audioQueue = dispatch_queue_create("frameDataoutAudioQueue", NULL);
+    [audioOut setSampleBufferDelegate:self queue:audioQueue];
+    [self.captureSession addOutput:audioOut];
+    [audioOut release];
     
 }
 
@@ -668,157 +678,146 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
     
     
+    
+    
     CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CVPixelBufferLockBaseAddress(pixelBuffer, 0);
     
     NSLog(@"data from cameral:%@",sampleBuffer);
+    return;
     
-    
-    // access the data
-    int width = CVPixelBufferGetWidth(pixelBuffer);
-    int height = CVPixelBufferGetHeight(pixelBuffer);
-    unsigned char *rawPixelBase = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
-    
-    AVFrame *yuvFrame;
-    yuvFrame = avcodec_alloc_frame();
-   // yuvFrame->quality = 1;
-    
-    
-//    
-//    今天要把YUV编码成MPEG格式，用到的参考函数是apiexample.c中的video_encode_example函数，该函数初始化部分有以下三条语句：
-//    picture->linesize[0] = c->width;
-//    picture->linesize[1] = c->width / 2;
-//    picture->linesize[2] = c->width / 2;
-//    其中 picture定义为AVFrame *picture;
-//    因为我的编码函数就没用到这个变量picture->linesize，所以自己写的初始化函数没有以上三条语句。结果编码出来的mpg文件全部不能正常显示图像。我为之而找了整整一天都没发现我错在哪了。偶然的又仔细分析了一下例子，发现和它唯一的区别就是上面的三条初始化。我实在没办法了，就索性把这三条语句也加到我的初始化程序中。没想到竟然成功了。
-//    因此这个picture->linesize变量是绝对不能忽略的，原来linesize[0]表示Y分量的宽度，linesize[1]表示U分量的宽度，linesize[2]表示V分量的宽度。它好像关系到编码时picture->data[]中数据的存取机制。如果有哪位大虾清楚其中的原因。希望不吝赐教。实在感激不尽。
-//    
-//    
-//    AVPicture结构中data和linesize关系
-//    AVPicture里面有data[4]和linesize[4]其中data是一个指向指针的指针(二级、二维指针)，也就是指向视频数据缓冲区的首地址，而data[0]~data[3]是一级指针，可以用如下的图来表示：
-//    data -->xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//    ^                         ^                       ^
-//    |                           |                        |
-//    data[0]                data[1]              data[2]
-//    比如说，当pix_fmt=PIX_FMT_YUV420P时，data中的数据是按照YUV的格式存储的，也就是：
-//    data -->YYYYYYYYYYYYYYYYYYYYYYYYUUUUUUUUUUUVVVVVVVVVVVV
-//    ^                                        ^                      ^
-//    |                                          |                       |
-//    data[0]                                data[1]             data[2]
-//    
-//    linesize是指对应于每一行的大小，为什么需要这个变量，是因为在YUV格式和RGB格式时，每行的大小不一定等于图像的宽度。
-//    linesize = width + padding size(16+16) for YUV
-//        linesize = width*pixel_size  for RGB
-//            padding is needed during Motion Estimation and Motion Compensation for Optimizing MV serach and  P/B frame reconstruction
-//                
-//                for RGB only one channel is available
-//                    so RGB24 : data[0] = packet rgbrgbrgbrgb......
-//                    linesize[0] = width*3
-//                    data[1],data[2],data[3],linesize[1],linesize[2],linesize[2] have no any means for RGB
-//                        
-//                        测试如下：(原始的320×182视频)
-//                        如果pix_fmt=PIX_FMT_RGBA32
-//                        linesize 的只分别为：1280  0    0     0
-//                        如果pix_fmt=PIX_FMT_RGB24
-//                        linesize 的只分别为：960   0    0     0
-//                        如果pix_fmt=PIX_FMT_YUV420P
-//                        linesize 的只分别为：352   176  176   0
-    
-    
-//    只有将自己的使用心得记录。
-//    1 int avpicture_fill(AVPicture *picture, uint8_t *ptr,
-//                         int pix_fmt, int width, int height);
-//    这个函数的使用本质上是为已经分配的空间的结构体AVPicture挂上一段用于保存数据的空间，这个结构体中有一个指针数组data[4]，挂在这个数组里。一般我们这么使用：
-//    1） pFrameRGB=avcodec_alloc_frame();
-//    2） numBytes=avpicture_get_size(PIX_FMT_RGB24, pCodecCtx->width,pCodecCtx->height);
-//    buffer=(uint8_t *)av_malloc(numBytes*sizeof(uint8_t));
-//    3） avpicture_fill((AVPicture *)pFrameRGB, buffer, PIX_FMT_RGB24,pCodecCtx->width, pCodecCtx-         >height);
-//    以上就是为pFrameRGB挂上buffer。这个buffer是用于存缓冲数据的。
-    
-    
-//    picture->linesize[0] = c->width;
-//    picture->linesize[1] = c->width / 2;
-//    picture->linesize[2] = c->width / 2;
-    int avpicture_fillNum = avpicture_fill((AVPicture*)yuvFrame, rawPixelBase, PIX_FMT_YUV420P, width, height);//PIX_FMT_RGB32//PIX_FMT_RGB8
-   // printImage(rawPixelBase, width, height);    
-    NSLog(@"rawPixelBase = %i , rawPixelBase -s = %s",rawPixelBase, rawPixelBase);
-    NSLog(@"avpicture_fill = %i",avpicture_fillNum);
-    NSLog(@"width = %i,height = %i",width, height);
-    CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
-  
-//以上得到了ffmpeg形式的yuv格式的数据yuvFrame
-//    NSLog(@"以上得到了ffmpeg形式的yuv格式的数据yuvFrame:%@",yuvFrame);
-
-////    改变原始yuv的大小
-//   struct SwsContext* scaleContext = sws_getContext(width, height,
-//                                                   PIX_FMT_YUV420P,
-//                                                   codecContext->width, codecContext->height,
-//                                                   PIX_FMT_YUV420P,
-//                                                   SWS_FAST_BILINEAR, NULL, NULL, NULL);
-//    sws_scale(scaleContext, pFrame->data, pFrame->linesize, 0, pFrame->height, <#uint8_t *const *dst#>, <#const int *dstStride#>)
-    
- 
-    
-//   将原始的yuv 改为rgb24
-    AVFrame *rgbFrame = av_frame_alloc();
-    int rgbbytes = avpicture_get_size(PIX_FMT_RGB24, codecContext->width, codecContext->height);
-    uint8_t  *rgbBuf = (uint8_t*)av_malloc(rgbbytes);
-    avpicture_fill((AVPicture*)rgbFrame, rgbBuf, PIX_FMT_RGB24, codecContext->width, codecContext->height);
-
-    struct SwsContext* rgbSwsContext = sws_getContext(codecContext->width, codecContext->height,
-                                                     PIX_FMT_YUV420P,
-                                                     codecContext->width, codecContext->height,
-                                                     PIX_FMT_RGB24,
-                                                     SWS_FAST_BILINEAR, NULL, NULL, NULL);
-    sws_scale(rgbSwsContext, yuvFrame->data, yuvFrame->linesize, 0, codecContext->height, rgbFrame->data, rgbFrame->linesize);
-    
-   UIImage *tep =  [self makeUIImageWithAVPicture:(AVPicture *)rgbFrame withWidth:codecContext->width withHeight:codecContext->height];
-   // [self performSelectorOnMainThread:@selector(updateView:) withObject:tep waitUntilDone:YES];
-    
-    printf("Video encoding  per frame \n");
-    //    将yuv用h246编码
-    uint8_t *h264YuvBuf;
-    int yuvbytes = avpicture_get_size(PIX_FMT_YUV420P, codecContext->width, codecContext->height);
-    h264YuvBuf = (uint8_t*)av_malloc(yuvbytes);
-    int retH264Yuv = avcodec_encode_video(codecContext, h264YuvBuf, yuvbytes, yuvFrame);
-    if(retH264Yuv<0)
     {
-        NSLog(@"yuv h264 ecode fail :%d",retH264Yuv);
+        
+        
+        //+++++++++++++  视频部分  ++++++++++++++++++++++++++++++++
+        // access the data
+        int width = CVPixelBufferGetWidth(pixelBuffer);
+        int height = CVPixelBufferGetHeight(pixelBuffer);
+        unsigned char *rawPixelBase = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
+        
+        AVFrame *yuvFrame;
+        yuvFrame = avcodec_alloc_frame();
+        // yuvFrame->quality = 1;
+        
+        
+        //
+        //    今天要把YUV编码成MPEG格式，用到的参考函数是apiexample.c中的video_encode_example函数，该函数初始化部分有以下三条语句：
+        //    picture->linesize[0] = c->width;
+        //    picture->linesize[1] = c->width / 2;
+        //    picture->linesize[2] = c->width / 2;
+        //    其中 picture定义为AVFrame *picture;
+        //    因为我的编码函数就没用到这个变量picture->linesize，所以自己写的初始化函数没有以上三条语句。结果编码出来的mpg文件全部不能正常显示图像。我为之而找了整整一天都没发现我错在哪了。偶然的又仔细分析了一下例子，发现和它唯一的区别就是上面的三条初始化。我实在没办法了，就索性把这三条语句也加到我的初始化程序中。没想到竟然成功了。
+        //    因此这个picture->linesize变量是绝对不能忽略的，原来linesize[0]表示Y分量的宽度，linesize[1]表示U分量的宽度，linesize[2]表示V分量的宽度。它好像关系到编码时picture->data[]中数据的存取机制。如果有哪位大虾清楚其中的原因。希望不吝赐教。实在感激不尽。
+        //
+        //
+        //    AVPicture结构中data和linesize关系
+        //    AVPicture里面有data[4]和linesize[4]其中data是一个指向指针的指针(二级、二维指针)，也就是指向视频数据缓冲区的首地址，而data[0]~data[3]是一级指针，可以用如下的图来表示：
+        //    data -->xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        //    ^                         ^                       ^
+        //    |                           |                        |
+        //    data[0]                data[1]              data[2]
+        //    比如说，当pix_fmt=PIX_FMT_YUV420P时，data中的数据是按照YUV的格式存储的，也就是：
+        //    data -->YYYYYYYYYYYYYYYYYYYYYYYYUUUUUUUUUUUVVVVVVVVVVVV
+        //    ^                                        ^                      ^
+        //    |                                          |                       |
+        //    data[0]                                data[1]             data[2]
+        //
+        //    linesize是指对应于每一行的大小，为什么需要这个变量，是因为在YUV格式和RGB格式时，每行的大小不一定等于图像的宽度。
+        //    linesize = width + padding size(16+16) for YUV
+        //        linesize = width*pixel_size  for RGB
+        //            padding is needed during Motion Estimation and Motion Compensation for Optimizing MV serach and  P/B frame reconstruction
+        //
+        //                for RGB only one channel is available
+        //                    so RGB24 : data[0] = packet rgbrgbrgbrgb......
+        //                    linesize[0] = width*3
+        //                    data[1],data[2],data[3],linesize[1],linesize[2],linesize[2] have no any means for RGB
+        //
+        //                        测试如下：(原始的320×182视频)
+        //                        如果pix_fmt=PIX_FMT_RGBA32
+        //                        linesize 的只分别为：1280  0    0     0
+        //                        如果pix_fmt=PIX_FMT_RGB24
+        //                        linesize 的只分别为：960   0    0     0
+        //                        如果pix_fmt=PIX_FMT_YUV420P
+        //                        linesize 的只分别为：352   176  176   0
+        
+        
+        //    只有将自己的使用心得记录。
+        //    1 int avpicture_fill(AVPicture *picture, uint8_t *ptr,
+        //                         int pix_fmt, int width, int height);
+        //    这个函数的使用本质上是为已经分配的空间的结构体AVPicture挂上一段用于保存数据的空间，这个结构体中有一个指针数组data[4]，挂在这个数组里。一般我们这么使用：
+        //    1） pFrameRGB=avcodec_alloc_frame();
+        //    2） numBytes=avpicture_get_size(PIX_FMT_RGB24, pCodecCtx->width,pCodecCtx->height);
+        //    buffer=(uint8_t *)av_malloc(numBytes*sizeof(uint8_t));
+        //    3） avpicture_fill((AVPicture *)pFrameRGB, buffer, PIX_FMT_RGB24,pCodecCtx->width, pCodecCtx-         >height);
+        //    以上就是为pFrameRGB挂上buffer。这个buffer是用于存缓冲数据的。
+        
+        
+        //    picture->linesize[0] = c->width;
+        //    picture->linesize[1] = c->width / 2;
+        //    picture->linesize[2] = c->width / 2;
+        int avpicture_fillNum = avpicture_fill((AVPicture*)yuvFrame, rawPixelBase, PIX_FMT_YUV420P, width, height);//PIX_FMT_RGB32//PIX_FMT_RGB8
+        // printImage(rawPixelBase, width, height);
+        NSLog(@"rawPixelBase = %i , rawPixelBase -s = %s",rawPixelBase, rawPixelBase);
+        NSLog(@"avpicture_fill = %i",avpicture_fillNum);
+        NSLog(@"width = %i,height = %i",width, height);
+        CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+        
+        //以上得到了ffmpeg形式的yuv格式的数据yuvFrame
+        //    NSLog(@"以上得到了ffmpeg形式的yuv格式的数据yuvFrame:%@",yuvFrame);
+        
+        ////    改变原始yuv的大小
+        //   struct SwsContext* scaleContext = sws_getContext(width, height,
+        //                                                   PIX_FMT_YUV420P,
+        //                                                   codecContext->width, codecContext->height,
+        //                                                   PIX_FMT_YUV420P,
+        //                                                   SWS_FAST_BILINEAR, NULL, NULL, NULL);
+        //    sws_scale(scaleContext, pFrame->data, pFrame->linesize, 0, pFrame->height, <#uint8_t *const *dst#>, <#const int *dstStride#>)
+        
+        
+        
+        //   将原始的yuv 改为rgb24
+        AVFrame *rgbFrame = av_frame_alloc();
+        int rgbbytes = avpicture_get_size(PIX_FMT_RGB24, codecContext->width, codecContext->height);
+        uint8_t  *rgbBuf = (uint8_t*)av_malloc(rgbbytes);
+        avpicture_fill((AVPicture*)rgbFrame, rgbBuf, PIX_FMT_RGB24, codecContext->width, codecContext->height);
+        
+        struct SwsContext* rgbSwsContext = sws_getContext(codecContext->width, codecContext->height,
+                                                          PIX_FMT_YUV420P,
+                                                          codecContext->width, codecContext->height,
+                                                          PIX_FMT_RGB24,
+                                                          SWS_FAST_BILINEAR, NULL, NULL, NULL);
+        sws_scale(rgbSwsContext, yuvFrame->data, yuvFrame->linesize, 0, codecContext->height, rgbFrame->data, rgbFrame->linesize);
+        
+        //   UIImage *tep =  [self makeUIImageWithAVPicture:(AVPicture *)rgbFrame withWidth:codecContext->width withHeight:codecContext->height];
+        //    [self performSelectorOnMainThread:@selector(updateView:) withObject:tep waitUntilDone:YES];
+        
+        printf("Video encoding  per frame \n");
+        //    将yuv用h246编码
+        uint8_t *h264YuvBuf;
+        int yuvbytes = avpicture_get_size(PIX_FMT_YUV420P, codecContext->width, codecContext->height);
+        h264YuvBuf = (uint8_t*)av_malloc(yuvbytes);
+        int retH264Yuv = avcodec_encode_video(codecContext, h264YuvBuf, yuvbytes, yuvFrame);
+        if(retH264Yuv<0)
+        {
+            NSLog(@"yuv h264 ecode fail :%d",retH264Yuv);
+        }
+        else
+        {
+            NSLog(@"YUV H264 ecode sucessus:%d",retH264Yuv);
+            
+            //将yuv h264 decode 为 yuv --》rgb
+            [self decodeAndShow:(char*)h264YuvBuf length:yuvbytes andTimeStamp:111111];
+            
+        }
+        
+        av_free(yuvFrame);
+        av_free(rgbFrame);
+        free(rgbBuf);
+        free(h264YuvBuf);
     }
-    else
-    {
-        NSLog(@"YUV H264 ecode sucessus:%d",retH264Yuv);
-        
-        //将yuv h264 decode 为 yuv --》rgb
-     [self decodeAndShow:(char*)h264YuvBuf length:yuvbytes andTimeStamp:111111];
-
-    }
     
+    //+++++++++++++  音频 部分  ++++++++++++++++++++++++++++++++
     
-    
-    
-   //   NSArray * paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-   // NSString *doc = [paths objectAtIndex:0];
-//    static int i = 0;
- //   if (out_size>0)
-//    {
-  //    sess.SendPacket(outbuf, out_size);
-       
-        
-//        NSData *data = [NSData dataWithBytes:outbuf length:out_size];
-//        [data writeToFile:[doc stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.jpg",i]] atomically:YES];
-//        i++;
-        
-        
-    //    [self decodeAndShow:(char*)outbuf length:out_size andTimeStamp:111111];
-        
-//    }
-    
-   // free(outbuf);
-    
-    
-//    av_free(pFrame);
-
     
 }
 
@@ -973,20 +972,7 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     
     printf("encoding frame %d\n", outbuf);
     
-    //fwrite(outbuf, 1, out_size, f);
     
-    //              free(buffer);
-    //              buffer = NULL;
-    
-    
-    
-    /* add sequence end code to have a real mpeg file */
-    //          outbuf[0] = 0x00;
-    //          outbuf[1] = 0x00;
-    //          outbuf[2] = 0x01;
-    //          outbuf[3] = 0xb7;
-    //fwrite(outbuf, 1, 4, f);
-    //fclose(f);
     free(outbuf);
     
     avcodec_close(c);
@@ -1130,7 +1116,7 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     
     
     
-
+    
     //创建文件管理器
     NSFileManager *fileManager = [NSFileManager defaultManager];
     //获取路径
@@ -1151,8 +1137,8 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     // [self setUpWriter];
     [self setUpSession];
     [self setUpPreviewLayer];
-    
-    [self setUpVideoInput];
+    [self setUpAudioInput];
+  //  [self setUpVideoInput];
     [self setUpFrameDataOutput];
     [self startSeeion];
     [self setUprtpSession];
