@@ -680,17 +680,27 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     
     
-    CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+
     
     NSLog(@"data from cameral:%@",sampleBuffer);
     return;
     
+    // Get framerate
+    CMTime timestamp = CMSampleBufferGetPresentationTimeStamp( sampleBuffer );
+    
+    CMFormatDescriptionRef formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer);
+    
+//     Get buffer type
+ CMMediaType bufferType =   CMFormatDescriptionGetMediaSubType( formatDescription );
+
+   if (kCMMediaType_Video == bufferType)
     {
         
         
         //+++++++++++++  视频部分  ++++++++++++++++++++++++++++++++
         // access the data
+        CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+        CVPixelBufferLockBaseAddress(pixelBuffer, 0);
         int width = CVPixelBufferGetWidth(pixelBuffer);
         int height = CVPixelBufferGetHeight(pixelBuffer);
         unsigned char *rawPixelBase = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
@@ -817,7 +827,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
     
     //+++++++++++++  音频 部分  ++++++++++++++++++++++++++++++++
-    
+    else if(kCMMediaType_Audio == bufferType)
+    {
+        NSLog(@"buffer is  sound");
+    }
     
 }
 
