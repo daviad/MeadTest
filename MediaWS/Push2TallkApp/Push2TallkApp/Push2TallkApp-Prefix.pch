@@ -11,4 +11,39 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+#import "RCLog.h"
+#import "RCHelper.h"
 #endif
+
+
+#define PRODUCT_TEST  0
+
+#if PRODUCT_TEST
+
+#define kSchemeURLPath            @"https://61.147.75.239:8443"
+#define kPicURLPath               @"http://61.147.75.239:8080"
+#define kXMPPServerAddress        @"61.147.75.239"
+
+#else
+
+#define kSchemeURLPath            @"https://www.loocha.com.cn:8443"
+#define kPicURLPath               @"http://download.loocha.com.cn"
+#define kXMPPServerAddress        @"www.loocha.com.cn"
+
+#endif
+
+#define kStunAddress             @"61.147.75.250"
+#define kStunPort                3478
+
+
+
+// Push2Talk Push Type and Value
+typedef enum {
+    kPush2TalkCallRemote,
+    kPush2TalkRemoteMsg,
+    kPush2TalkQuit
+} Push2TalkPushType;
+
+#define kPush2TalkPushKey   @"Push2TalkPush"
+#define kPush2TalkPushType  @"kPush2TalkPushType"
+#define kPush2TalkPushValue @"kPush2TalkPushValue"

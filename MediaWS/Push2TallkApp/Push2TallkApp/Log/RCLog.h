@@ -9,6 +9,8 @@
 #ifndef LoochaLog_RCLog_h
 #define LoochaLog_RCLog_h
 
+
+
 #define RCFUNC_EMPTY ((void)0)
 
 /*

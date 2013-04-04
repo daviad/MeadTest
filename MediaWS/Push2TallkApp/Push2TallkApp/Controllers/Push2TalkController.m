@@ -8,19 +8,14 @@
 
 #import "Push2TalkController.h"
 #import "OnlineFriendListViewController.h"
-#import "DMStudent.h"
 
 #import "TalkManager.h"
 #import "TalkSender.h"
 #import "TalkRecver.h"
 
-#import "UIButton+WebCache.h"
-#import "LoochaAlertView.h"
-#import "UIImageView+WebCache.h"
 
-#import "CampusSingleton.h"
 
-@interface Push2TalkController () <TalkManagerControlingDelegate, LoochaAlertViewDelegate>
+@interface Push2TalkController () <TalkManagerControlingDelegate>
 
 @property (nonatomic, readwrite) TalkState talkState;
 
@@ -87,38 +82,38 @@
     [super dealloc];
 }
 
-- (BOOL)handleLoochaBarActionItem:(LoochaBarActionItem *)loochaBarItem
-{
-    [self actionCallOff];
-    return YES;
-}
+//- (BOOL)handleLoochaBarActionItem:(LoochaBarActionItem *)loochaBarItem
+//{
+//    [self actionCallOff];
+//    return YES;
+//}
 
-- (void)setUpLoochaContainer
-{
-    [super setUpLoochaContainer];
-    
-    [self contentView].tiledImage = [UIImage imageNamed:@"push2talk_tiled_bg"];
-    [self contentView].lineColor = RCColorWithValue(0x9dc1d0);
-    [self contentView].borderColor = RCColorWithValue(0x7aabc1);
-    
-    if (self.loochaNavigationItem.leftBarItem == nil) {
-        self.loochaNavigationItem.leftBarItem = [LoochaBarActionItem homeLoochaBarItem];
-    }
-    self.loochaNavigationItem.title = @"免费电话";
-}
-
-// 由于某些图仅有一套，需按比例计算排版尺寸
-- (void)addImageViewToBottom:(UIImageView *)v
-{
-    CGRect r = [self contentView].bounds;
-    CGSize sz = v.image.size;
-    sz.height = sz.height*r.size.width/sz.width;
-    sz.width = r.size.width;
-    r.origin.y = r.size.height - sz.height;
-    r.size = sz;
-    v.frame = r;
-    [[self contentView] addSubview:v];
-}
+//- (void)setUpLoochaContainer
+//{
+//    [super setUpLoochaContainer];
+//    
+//    [self contentView].tiledImage = [UIImage imageNamed:@"push2talk_tiled_bg"];
+//    [self contentView].lineColor = RCColorWithValue(0x9dc1d0);
+//    [self contentView].borderColor = RCColorWithValue(0x7aabc1);
+//    
+//    if (self.loochaNavigationItem.leftBarItem == nil) {
+//        self.loochaNavigationItem.leftBarItem = [LoochaBarActionItem homeLoochaBarItem];
+//    }
+//    self.loochaNavigationItem.title = @"免费电话";
+//}
+//
+//// 由于某些图仅有一套，需按比例计算排版尺寸
+//- (void)addImageViewToBottom:(UIImageView *)v
+//{
+//    CGRect r = [self contentView].bounds;
+//    CGSize sz = v.image.size;
+//    sz.height = sz.height*r.size.width/sz.width;
+//    sz.width = r.size.width;
+//    r.origin.y = r.size.height - sz.height;
+//    r.size = sz;
+//    v.frame = r;
+//    [[self contentView] addSubview:v];
+//}
 
 - (void)configControlView
 {
@@ -148,70 +143,70 @@
     [btn release];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // back ground
-    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"push2talk_bg"]];
-    [self addImageViewToBottom:bgView];
-    [bgView release];
-    
-    // control view
-    controlView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"push2talk_control_normal"]];
-    [self addImageViewToBottom:controlView];
-    [self configControlView];
-    
-    // top cover
-    UIImageView *topCover = [[UIImageView alloc] initWithFrame:CGRectMake(([self contentView].bounds.size.width - 290)/2, 0, 290, 30)];
-    topCover.image = [UIImage imageNamed:@"push2talk_top_cover"];
-    [[self contentView] addSubview:topCover];
-    [topCover release];
-    
-    // contents
-    CGRect r = [[self contentView] contentArea];
-    CGFloat y = r.origin.y;
-        
-    // avatar button
-    y += 15;
-    avatarBtn = [[UIButton alloc] initWithFrame:CGRectMake(r.origin.x + (r.size.width - 94)/2, y, 94, 90)];
-    y += 90;
-    [avatarBtn addTarget:self action:@selector(actionAddUser) forControlEvents:UIControlEventTouchUpInside];
-    [[self contentView] addSubview:avatarBtn];
-    
-    // state label
-    y += 5;
-    stateLabel = [[UILabel alloc] initWithFrame:CGRectMake(r.origin.x, y, r.size.width, 20)];
-    stateLabel.textAlignment = UITextAlignmentCenter;
-    stateLabel.backgroundColor = [UIColor clearColor];
-    [[self contentView] addSubview:stateLabel];
-    
-    adviceView = [[UIImageView alloc] initWithFrame:CGRectMake(r.origin.x, y + 20, r.size.width, 14)];
-    adviceView.backgroundColor = [UIColor clearColor];
-    adviceView.image = [UIImage imageNamed:@"push2talk_advertisement"];
-    adviceView.contentMode = UIViewContentModeScaleAspectFit;
-    [[self contentView] addSubview:adviceView];
-    y += 20;
-    
-    // time label
-    y += 5;
-    timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(r.origin.x, y, r.size.width, 20)];
-    y += 20;
-    timeLabel.textAlignment = UITextAlignmentCenter;
-    timeLabel.backgroundColor = [UIColor clearColor];
-    [[self contentView] addSubview:timeLabel];
-    
-    // tip label
-    y += 5;
-    tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(r.origin.x, y, r.size.width, 20)];
-    y += 20;
-    tipLabel.textAlignment = UITextAlignmentCenter;
-    tipLabel.backgroundColor = [UIColor clearColor];
-    tipLabel.textColor = [UIColor grayColor];
-    [[self contentView] addSubview:tipLabel];
-    
-    [self updateViews];
-}
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    
+//    // back ground
+//    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"push2talk_bg"]];
+//    [self addImageViewToBottom:bgView];
+//    [bgView release];
+//    
+//    // control view
+//    controlView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"push2talk_control_normal"]];
+//    [self addImageViewToBottom:controlView];
+//    [self configControlView];
+//    
+//    // top cover
+//    UIImageView *topCover = [[UIImageView alloc] initWithFrame:CGRectMake(([self contentView].bounds.size.width - 290)/2, 0, 290, 30)];
+//    topCover.image = [UIImage imageNamed:@"push2talk_top_cover"];
+//    [[self contentView] addSubview:topCover];
+//    [topCover release];
+//    
+//    // contents
+//    CGRect r = [[self contentView] contentArea];
+//    CGFloat y = r.origin.y;
+//        
+//    // avatar button
+//    y += 15;
+//    avatarBtn = [[UIButton alloc] initWithFrame:CGRectMake(r.origin.x + (r.size.width - 94)/2, y, 94, 90)];
+//    y += 90;
+//    [avatarBtn addTarget:self action:@selector(actionAddUser) forControlEvents:UIControlEventTouchUpInside];
+//    [[self contentView] addSubview:avatarBtn];
+//    
+//    // state label
+//    y += 5;
+//    stateLabel = [[UILabel alloc] initWithFrame:CGRectMake(r.origin.x, y, r.size.width, 20)];
+//    stateLabel.textAlignment = UITextAlignmentCenter;
+//    stateLabel.backgroundColor = [UIColor clearColor];
+//    [[self contentView] addSubview:stateLabel];
+//    
+//    adviceView = [[UIImageView alloc] initWithFrame:CGRectMake(r.origin.x, y + 20, r.size.width, 14)];
+//    adviceView.backgroundColor = [UIColor clearColor];
+//    adviceView.image = [UIImage imageNamed:@"push2talk_advertisement"];
+//    adviceView.contentMode = UIViewContentModeScaleAspectFit;
+//    [[self contentView] addSubview:adviceView];
+//    y += 20;
+//    
+//    // time label
+//    y += 5;
+//    timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(r.origin.x, y, r.size.width, 20)];
+//    y += 20;
+//    timeLabel.textAlignment = UITextAlignmentCenter;
+//    timeLabel.backgroundColor = [UIColor clearColor];
+//    [[self contentView] addSubview:timeLabel];
+//    
+//    // tip label
+//    y += 5;
+//    tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(r.origin.x, y, r.size.width, 20)];
+//    y += 20;
+//    tipLabel.textAlignment = UITextAlignmentCenter;
+//    tipLabel.backgroundColor = [UIColor clearColor];
+//    tipLabel.textColor = [UIColor grayColor];
+//    [[self contentView] addSubview:tipLabel];
+//    
+//    [self updateViews];
+//}
 
 - (void)viewDidUnload
 {
@@ -327,57 +322,57 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)actionAddUser
-{
-    LoochaContainerController *containerController = [[LoochaContainerController alloc] init];
-    OnlineFriendListViewController *controller = [[OnlineFriendListViewController alloc] init];
-    containerController.loochaNavigationItem.leftBarItem = [LoochaBarActionItem backLoochaBarItem];
-    containerController.loochaNavigationItem.rightBarItems = [NSArray arrayWithObject:[LoochaBarNavChildItem loochaBarItemWithChildController:controller]];
-    [controller release];
-    [self.navigationController pushViewController:containerController animated:YES];
-    [containerController release];
-}
+//- (void)actionAddUser
+//{
+//    LoochaContainerController *containerController = [[LoochaContainerController alloc] init];
+//    OnlineFriendListViewController *controller = [[OnlineFriendListViewController alloc] init];
+//    containerController.loochaNavigationItem.leftBarItem = [LoochaBarActionItem backLoochaBarItem];
+//    containerController.loochaNavigationItem.rightBarItems = [NSArray arrayWithObject:[LoochaBarNavChildItem loochaBarItemWithChildController:controller]];
+//    [controller release];
+//    [self.navigationController pushViewController:containerController animated:YES];
+//    [containerController release];
+//}
 
-- (void)updateViews
-{
-    if (sessionInfo.remoteUserInfo) {
-        self.view.ignoreGlobalPanGesture = YES;
-        avatarBtn.titleEdgeInsets = UIEdgeInsetsZero;
-        [avatarBtn setTitle:nil forState:UIControlStateNormal];
-        [avatarBtn setBackgroundImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
-                            placeholderImage:nil];
-        
-        avatarBtn.enabled = NO;
-        adviceView.hidden = YES;
-        stateLabel.hidden = NO;
-        timeLabel.hidden = NO;
-        tipLabel.hidden = NO;
-        
-        stateLabel.text = [NSString stringWithFormat:@"与 %@ 通话中...", sessionInfo.remoteUserInfo.name];
-        [self updateTime];
-        
-        if (sessionInfo.connected) {
-            
-        }
-        else {
-            tipLabel.text = @"等待应答，嘟嘟声后开始对讲...";
-        }
-    }
-    else {
-        self.view.ignoreGlobalPanGesture = NO;
-        [avatarBtn setBackgroundImage:[UIImage imageNamed:@"push2talk_add_user"] forState:UIControlStateNormal];
-        [avatarBtn setTitle:@"选择联系人" forState:UIControlStateNormal];
-        avatarBtn.titleEdgeInsets = UIEdgeInsetsMake(50, 0, 0, 0);
-        [avatarBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        avatarBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-        
-        avatarBtn.enabled = YES;
-        adviceView.hidden = NO;
-        stateLabel.hidden = YES;
-        timeLabel.hidden = YES;
-        tipLabel.hidden = YES;
-    }
-}
+//- (void)updateViews
+//{
+//    if (sessionInfo.remoteUserInfo) {
+//        self.view.ignoreGlobalPanGesture = YES;
+//        avatarBtn.titleEdgeInsets = UIEdgeInsetsZero;
+//        [avatarBtn setTitle:nil forState:UIControlStateNormal];
+//        [avatarBtn setBackgroundImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
+//                            placeholderImage:nil];
+//        
+//        avatarBtn.enabled = NO;
+//        adviceView.hidden = YES;
+//        stateLabel.hidden = NO;
+//        timeLabel.hidden = NO;
+//        tipLabel.hidden = NO;
+//        
+//        stateLabel.text = [NSString stringWithFormat:@"与 %@ 通话中...", sessionInfo.remoteUserInfo.name];
+//        [self updateTime];
+//        
+//        if (sessionInfo.connected) {
+//            
+//        }
+//        else {
+//            tipLabel.text = @"等待应答，嘟嘟声后开始对讲...";
+//        }
+//    }
+//    else {
+//        self.view.ignoreGlobalPanGesture = NO;
+//        [avatarBtn setBackgroundImage:[UIImage imageNamed:@"push2talk_add_user"] forState:UIControlStateNormal];
+//        [avatarBtn setTitle:@"选择联系人" forState:UIControlStateNormal];
+//        avatarBtn.titleEdgeInsets = UIEdgeInsetsMake(50, 0, 0, 0);
+//        [avatarBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+//        avatarBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+//        
+//        avatarBtn.enabled = YES;
+//        adviceView.hidden = NO;
+//        stateLabel.hidden = YES;
+//        timeLabel.hidden = YES;
+//        tipLabel.hidden = YES;
+//    }
+//}
 
 - (void)updateTime
 {
@@ -561,11 +556,11 @@ NSString *stringOfTalkState(TalkState ts)
 
 #pragma mark - LoochaAlertViewDelegate
 
-- (void)loochaAlertView:(LoochaAlertView *)alertView didSelectButtonAt:(NSUInteger)index
-{
-    alertView.delegate = nil;
-    [self stopConnect];
-}
+//- (void)loochaAlertView:(LoochaAlertView *)alertView didSelectButtonAt:(NSUInteger)index
+//{
+//    alertView.delegate = nil;
+//    [self stopConnect];
+//}
 
 #pragma mark - TalkManagerControlingDelegate
 
@@ -618,33 +613,33 @@ NSString *stringOfTalkState(TalkState ts)
     [self performSelectorOnMainThread:@selector(handleCMessageType:) withObject:[NSNumber numberWithInt:type] waitUntilDone:NO];
 }
 
-- (void)timeoutFortalkManager:(TalkManager *)talkManager
-{
-    LoochaAlertView *alert = [[LoochaAlertView alloc] initWithTitle:sessionInfo.remoteUserInfo.name
-                                                            message:@"您的网络不稳定，请稍后再试！"
-                                                   buttonTitleArray:[NSArray arrayWithObject:@"确定"]];
-    [alert.imageView setImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
-                    placeholderImage:nil];
-    alert.delegate = self;
-    [alert show];
-    [alert release];
-    
-    [self playBeep];
-}
+//- (void)timeoutFortalkManager:(TalkManager *)talkManager
+//{
+//    LoochaAlertView *alert = [[LoochaAlertView alloc] initWithTitle:sessionInfo.remoteUserInfo.name
+//                                                            message:@"您的网络不稳定，请稍后再试！"
+//                                                   buttonTitleArray:[NSArray arrayWithObject:@"确定"]];
+//    [alert.imageView setImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
+//                    placeholderImage:nil];
+//    alert.delegate = self;
+//    [alert show];
+//    [alert release];
+//    
+//    [self playBeep];
+//}
 
--(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg
-{
-    switch (messageType) {
-        case kTaskMsgPush2TalkUserSelected:
-        {
-            sessionInfo.remoteUserInfo = (UserInfo *)arg;
-            [self startConnect];
-            [self updateViews];
-            return YES;
-            break;
-        }
-    }
-    return NO;
-}
+//-(BOOL)handleMessage:(int)messageType withResult:(int)result withArg:(id)arg
+//{
+//    switch (messageType) {
+//        case kTaskMsgPush2TalkUserSelected:
+//        {
+//            sessionInfo.remoteUserInfo = (UserInfo *)arg;
+//            [self startConnect];
+//            [self updateViews];
+//            return YES;
+//            break;
+//        }
+//    }
+//    return NO;
+//}
 
 @end

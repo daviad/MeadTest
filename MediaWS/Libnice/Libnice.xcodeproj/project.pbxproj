@@ -499,11 +499,10 @@
 				DSTROOT = /tmp/Libnice.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Libnice/Libnice-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Libnice",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Libnice";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -514,11 +513,10 @@
 				DSTROOT = /tmp/Libnice.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Libnice/Libnice-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Libnice",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Libnice";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -542,6 +540,7 @@
 				5275C631170D49C800D7A3E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

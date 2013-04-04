@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523C0ECF170D87380068A4AF /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C0ECE170D87380068A4AF /* UserInfo.m */; };
+		523C0ED7170D87870068A4AF /* ProtobufEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C0ED2170D87870068A4AF /* ProtobufEncode.m */; };
+		523C0ED8170D87870068A4AF /* RCPromptPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C0ED4170D87870068A4AF /* RCPromptPlayer.m */; };
+		523C0ED9170D87870068A4AF /* RCQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = 523C0ED6170D87870068A4AF /* RCQueue.mm */; };
+		523C0EE8170D881E0068A4AF /* Opus.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 523C0EE7170D881D0068A4AF /* Opus.xcodeproj */; };
+		523C0EEA170D88280068A4AF /* Libnice.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 523C0EE9170D88280068A4AF /* Libnice.xcodeproj */; };
 		5275C5CE170D476400D7A3E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5275C5CD170D476400D7A3E5 /* UIKit.framework */; };
 		5275C5D0170D476400D7A3E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5275C5CF170D476400D7A3E5 /* Foundation.framework */; };
 		5275C5D2170D476400D7A3E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5275C5D1170D476400D7A3E5 /* CoreGraphics.framework */; };
@@ -30,9 +36,74 @@
 		5275C612170D47CA00D7A3E5 /* TalkSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5275C603170D47CA00D7A3E5 /* TalkSender.m */; };
 		5275C613170D47CA00D7A3E5 /* TalkSessionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5275C605170D47CA00D7A3E5 /* TalkSessionInfo.m */; };
 		5275C617170D492F00D7A3E5 /* RCLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5275C616170D492F00D7A3E5 /* RCLog.m */; };
+		527AD809170D891A00CF5992 /* libOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 527AD804170D88E800CF5992 /* libOpus.a */; };
+		527AD80A170D892500CF5992 /* libLibnice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 527AD7FF170D88E800CF5992 /* libLibnice.a */; };
+		527AD8D3170D931E00CF5992 /* RTPLib.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 527AD8D2170D931E00CF5992 /* RTPLib.xcodeproj */; };
+		52F4955F170DAEE20029600A /* libRTPLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F4955C170DAE9E0029600A /* libRTPLib.a */; };
+		52F495D2170DB0880029600A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F495D1170DB0880029600A /* AudioToolbox.framework */; };
+		52F495D4170DB0A20029600A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F495D3170DB0A20029600A /* CFNetwork.framework */; };
+		52F495D6170DB0AE0029600A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F495D5170DB0AE0029600A /* SystemConfiguration.framework */; };
+		52F495D8170DB0BB0029600A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F495D7170DB0BB0029600A /* MobileCoreServices.framework */; };
+		52F495DA170DB0CC0029600A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F495D9170DB0CC0029600A /* AVFoundation.framework */; };
+		52F495DD170DB1630029600A /* RCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F495DC170DB1630029600A /* RCHelper.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		527AD7FE170D88E800CF5992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523C0EE9170D88280068A4AF /* Libnice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5275C621170D49C700D7A3E5;
+			remoteInfo = Libnice;
+		};
+		527AD803170D88E800CF5992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523C0EE7170D881D0068A4AF /* Opus.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5275C91B170D55AC00D7A3E5;
+			remoteInfo = Opus;
+		};
+		527AD805170D88F500CF5992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523C0EE9170D88280068A4AF /* Libnice.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5275C620170D49C700D7A3E5;
+			remoteInfo = Libnice;
+		};
+		527AD807170D88F900CF5992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523C0EE7170D881D0068A4AF /* Opus.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5275C91A170D55AC00D7A3E5;
+			remoteInfo = Opus;
+		};
+		52F4955B170DAE9E0029600A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 527AD8D2170D931E00CF5992 /* RTPLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E456035316FBEEAF00DA6247;
+			remoteInfo = RTPLib;
+		};
+		52F4955D170DAEA50029600A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 527AD8D2170D931E00CF5992 /* RTPLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E456035216FBEEAF00DA6247;
+			remoteInfo = RTPLib;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		523C0ECD170D87380068A4AF /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		523C0ECE170D87380068A4AF /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		523C0ED1170D87870068A4AF /* ProtobufEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtobufEncode.h; sourceTree = "<group>"; };
+		523C0ED2170D87870068A4AF /* ProtobufEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtobufEncode.m; sourceTree = "<group>"; };
+		523C0ED3170D87870068A4AF /* RCPromptPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPromptPlayer.h; sourceTree = "<group>"; };
+		523C0ED4170D87870068A4AF /* RCPromptPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPromptPlayer.m; sourceTree = "<group>"; };
+		523C0ED5170D87870068A4AF /* RCQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCQueue.h; sourceTree = "<group>"; };
+		523C0ED6170D87870068A4AF /* RCQueue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RCQueue.mm; sourceTree = "<group>"; };
+		523C0EE7170D881D0068A4AF /* Opus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Opus.xcodeproj; path = ../../../Opus/Opus.xcodeproj; sourceTree = "<group>"; };
+		523C0EE9170D88280068A4AF /* Libnice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Libnice.xcodeproj; path = ../../../Libnice/Libnice.xcodeproj; sourceTree = "<group>"; };
 		5275C5CA170D476400D7A3E5 /* Push2TallkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Push2TallkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5275C5CD170D476400D7A3E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5275C5CF170D476400D7A3E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,6 +145,14 @@
 		5275C605170D47CA00D7A3E5 /* TalkSessionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkSessionInfo.m; sourceTree = "<group>"; };
 		5275C615170D492F00D7A3E5 /* RCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLog.h; sourceTree = "<group>"; };
 		5275C616170D492F00D7A3E5 /* RCLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLog.m; sourceTree = "<group>"; };
+		527AD8D2170D931E00CF5992 /* RTPLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RTPLib.xcodeproj; path = ../../../RTPLib/RTPLib.xcodeproj; sourceTree = "<group>"; };
+		52F495D1170DB0880029600A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		52F495D3170DB0A20029600A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		52F495D5170DB0AE0029600A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		52F495D7170DB0BB0029600A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		52F495D9170DB0CC0029600A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		52F495DB170DB1630029600A /* RCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCHelper.h; sourceTree = "<group>"; };
+		52F495DC170DB1630029600A /* RCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +160,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F495DA170DB0CC0029600A /* AVFoundation.framework in Frameworks */,
+				52F495D8170DB0BB0029600A /* MobileCoreServices.framework in Frameworks */,
+				52F495D6170DB0AE0029600A /* SystemConfiguration.framework in Frameworks */,
+				52F495D4170DB0A20029600A /* CFNetwork.framework in Frameworks */,
+				52F495D2170DB0880029600A /* AudioToolbox.framework in Frameworks */,
+				52F4955F170DAEE20029600A /* libRTPLib.a in Frameworks */,
+				527AD80A170D892500CF5992 /* libLibnice.a in Frameworks */,
+				527AD809170D891A00CF5992 /* libOpus.a in Frameworks */,
 				5275C5CE170D476400D7A3E5 /* UIKit.framework in Frameworks */,
 				5275C5D0170D476400D7A3E5 /* Foundation.framework in Frameworks */,
 				5275C5D2170D476400D7A3E5 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +177,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		523C0ED0170D87870068A4AF /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				52F495DB170DB1630029600A /* RCHelper.h */,
+				52F495DC170DB1630029600A /* RCHelper.m */,
+				523C0ED1170D87870068A4AF /* ProtobufEncode.h */,
+				523C0ED2170D87870068A4AF /* ProtobufEncode.m */,
+				523C0ED3170D87870068A4AF /* RCPromptPlayer.h */,
+				523C0ED4170D87870068A4AF /* RCPromptPlayer.m */,
+				523C0ED5170D87870068A4AF /* RCQueue.h */,
+				523C0ED6170D87870068A4AF /* RCQueue.mm */,
+			);
+			path = Toolkit;
+			sourceTree = "<group>";
+		};
+		523C0EDA170D87F80068A4AF /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				527AD8D2170D931E00CF5992 /* RTPLib.xcodeproj */,
+				523C0EE9170D88280068A4AF /* Libnice.xcodeproj */,
+				523C0EE7170D881D0068A4AF /* Opus.xcodeproj */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		5275C5C1170D476400D7A3E5 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +222,11 @@
 		5275C5CC170D476400D7A3E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52F495D9170DB0CC0029600A /* AVFoundation.framework */,
+				52F495D7170DB0BB0029600A /* MobileCoreServices.framework */,
+				52F495D5170DB0AE0029600A /* SystemConfiguration.framework */,
+				52F495D3170DB0A20029600A /* CFNetwork.framework */,
+				52F495D1170DB0880029600A /* AudioToolbox.framework */,
 				5275C5CD170D476400D7A3E5 /* UIKit.framework */,
 				5275C5CF170D476400D7A3E5 /* Foundation.framework */,
 				5275C5D1170D476400D7A3E5 /* CoreGraphics.framework */,
@@ -120,6 +237,8 @@
 		5275C5D3170D476400D7A3E5 /* Push2TallkApp */ = {
 			isa = PBXGroup;
 			children = (
+				523C0EDA170D87F80068A4AF /* Dependencies */,
+				523C0ED0170D87870068A4AF /* Toolkit */,
 				5275C614170D492F00D7A3E5 /* Log */,
 				5275C5EA170D47CA00D7A3E5 /* Controllers */,
 				5275C5EF170D47CA00D7A3E5 /* Models */,
@@ -159,6 +278,8 @@
 		5275C5EF170D47CA00D7A3E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				523C0ECD170D87380068A4AF /* UserInfo.h */,
+				523C0ECE170D87380068A4AF /* UserInfo.m */,
 				5275C5F0170D47CA00D7A3E5 /* AudioStreamPlayer.h */,
 				5275C5F1170D47CA00D7A3E5 /* AudioStreamPlayer.mm */,
 				5275C5F2170D47CA00D7A3E5 /* AudioStreamRecord.h */,
@@ -201,6 +322,30 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		527AD7FB170D88E800CF5992 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				527AD7FF170D88E800CF5992 /* libLibnice.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		527AD800170D88E800CF5992 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				527AD804170D88E800CF5992 /* libOpus.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52F49558170DAE9E0029600A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52F4955C170DAE9E0029600A /* libRTPLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +360,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				52F4955E170DAEA50029600A /* PBXTargetDependency */,
+				527AD808170D88F900CF5992 /* PBXTargetDependency */,
+				527AD806170D88F500CF5992 /* PBXTargetDependency */,
 			);
 			name = Push2TallkApp;
 			productName = Push2TallkApp;
@@ -240,12 +388,50 @@
 			mainGroup = 5275C5C1170D476400D7A3E5;
 			productRefGroup = 5275C5CB170D476400D7A3E5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 527AD7FB170D88E800CF5992 /* Products */;
+					ProjectRef = 523C0EE9170D88280068A4AF /* Libnice.xcodeproj */;
+				},
+				{
+					ProductGroup = 527AD800170D88E800CF5992 /* Products */;
+					ProjectRef = 523C0EE7170D881D0068A4AF /* Opus.xcodeproj */;
+				},
+				{
+					ProductGroup = 52F49558170DAE9E0029600A /* Products */;
+					ProjectRef = 527AD8D2170D931E00CF5992 /* RTPLib.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5275C5C9170D476400D7A3E5 /* Push2TallkApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		527AD7FF170D88E800CF5992 /* libLibnice.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLibnice.a;
+			remoteRef = 527AD7FE170D88E800CF5992 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		527AD804170D88E800CF5992 /* libOpus.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOpus.a;
+			remoteRef = 527AD803170D88E800CF5992 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52F4955C170DAE9E0029600A /* libRTPLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRTPLib.a;
+			remoteRef = 52F4955B170DAE9E0029600A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5275C5C8170D476400D7A3E5 /* Resources */ = {
@@ -256,6 +442,9 @@
 				5275C5E0170D476400D7A3E5 /* Default.png in Resources */,
 				5275C5E2170D476400D7A3E5 /* Default@2x.png in Resources */,
 				5275C5E4170D476400D7A3E5 /* Default-568h@2x.png in Resources */,
+				523C0EE8170D881E0068A4AF /* Opus.xcodeproj in Resources */,
+				523C0EEA170D88280068A4AF /* Libnice.xcodeproj in Resources */,
+				527AD8D3170D931E00CF5992 /* RTPLib.xcodeproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +471,33 @@
 				5275C612170D47CA00D7A3E5 /* TalkSender.m in Sources */,
 				5275C613170D47CA00D7A3E5 /* TalkSessionInfo.m in Sources */,
 				5275C617170D492F00D7A3E5 /* RCLog.m in Sources */,
+				523C0ECF170D87380068A4AF /* UserInfo.m in Sources */,
+				523C0ED7170D87870068A4AF /* ProtobufEncode.m in Sources */,
+				523C0ED8170D87870068A4AF /* RCPromptPlayer.m in Sources */,
+				523C0ED9170D87870068A4AF /* RCQueue.mm in Sources */,
+				52F495DD170DB1630029600A /* RCHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		527AD806170D88F500CF5992 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Libnice;
+			targetProxy = 527AD805170D88F500CF5992 /* PBXContainerItemProxy */;
+		};
+		527AD808170D88F900CF5992 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Opus;
+			targetProxy = 527AD807170D88F900CF5992 /* PBXContainerItemProxy */;
+		};
+		52F4955E170DAEA50029600A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RTPLib;
+			targetProxy = 52F4955D170DAEA50029600A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5275C5D6170D476400D7A3E5 /* InfoPlist.strings */ = {
@@ -358,6 +570,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Push2TallkApp/Push2TallkApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Libnice/Libnice/",
+					"\"$(SRCROOT)/../Opus/Opus/\"/**",
+					"\"$(SRCROOT)/../RTPLib/RTPLib/JRTPlib\"",
+				);
 				INFOPLIST_FILE = "Push2TallkApp/Push2TallkApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -369,6 +586,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Push2TallkApp/Push2TallkApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Libnice/Libnice/",
+					"\"$(SRCROOT)/../Opus/Opus/\"/**",
+					"\"$(SRCROOT)/../RTPLib/RTPLib/JRTPlib\"",
+				);
 				INFOPLIST_FILE = "Push2TallkApp/Push2TallkApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -394,6 +616,7 @@
 				5275C5E9170D476400D7A3E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

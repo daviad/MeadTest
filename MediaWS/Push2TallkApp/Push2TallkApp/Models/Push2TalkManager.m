@@ -9,19 +9,14 @@
 #import "Push2TalkManager.h"
 #import "Push2TalkController.h"
 #import "Push2TalkMsg.h"
-#import "XMPPConnetHandle.h"
-#import "CJSONSerializer.h"
+
 #import "TalkSessionInfo.h"
-//#import "XMPPCoreDataHander.h"
-#import "LoochaAlertView.h"
-#import "UIImageView+WebCache.h"
+
+
 
 #import "RCPromptPlayer.h"
-#import "FriendHandler.h"
-#import "StudentDAO.h"
 
-#import "CampusSingleton.h"
-#import "FrontViewController.h"
+
 
 # ifdef __cplusplus
 extern "C" {
@@ -35,7 +30,7 @@ extern "C" {
 #define kAlertTagRequested  1000
 #define kAlertTagRemoteQuit 1001
 
-@interface Push2TalkManager () <LoochaAlertViewDelegate>
+@interface Push2TalkManager ()
 
 @property (nonatomic, readwrite) BOOL q_sdp_sent;
 @property (nonatomic, readwrite) BOOL r_sdp_sent;
@@ -142,23 +137,23 @@ extern "C" {
      */
 }
 
-- (void)sendPacketRemoteUser:(NSString *)userID request:(NSString *)request connectivity:(NSString *)connectivity content:(NSInteger)content samplerate:(NSInteger)samplerate
-{
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         connectivity, @"connectivity",
-                         request, @"request",
-                         [NSNumber numberWithInteger:content], @"content",
-                         [NSNumber numberWithInteger:samplerate], @"samplerate",
-                         [NSNumber numberWithInteger:1], @"streamtype",
-                         [NSNumber numberWithInteger:1], @"version",
-                         nil];
-    NSData *data = [[CJSONSerializer serializer] serializeDictionary:dic error:NULL];
-    if (data) {
-        NSString *jsonBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        [[XMPPConnetHandle sharedInstance] sendChatMessage:userID bodyString:jsonBody];
-        [jsonBody release];
-    }
-}
+//- (void)sendPacketRemoteUser:(NSString *)userID request:(NSString *)request connectivity:(NSString *)connectivity content:(NSInteger)content samplerate:(NSInteger)samplerate
+//{
+//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+//                         connectivity, @"connectivity",
+//                         request, @"request",
+//                         [NSNumber numberWithInteger:content], @"content",
+//                         [NSNumber numberWithInteger:samplerate], @"samplerate",
+//                         [NSNumber numberWithInteger:1], @"streamtype",
+//                         [NSNumber numberWithInteger:1], @"version",
+//                         nil];
+//    NSData *data = [[CJSONSerializer serializer] serializeDictionary:dic error:NULL];
+//    if (data) {
+//        NSString *jsonBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        [[XMPPConnetHandle sharedInstance] sendChatMessage:userID bodyString:jsonBody];
+//        [jsonBody release];
+//    }
+//}
 
 - (void)sendPacketRemoteUser:(NSString *)userID request:(NSString *)request content:(NSInteger)content
 {
@@ -249,75 +244,75 @@ extern "C" {
 
 - (void)showRequestAlert
 {
-    LoochaAlertView *alertView = [[LoochaAlertView alloc] initWithTitle:@"请求与您会话"
-                                                                message:sessionInfo.remoteUserInfo.name
-                                                       buttonTitleArray:[NSArray arrayWithObjects:@"接受", @"拒绝", nil]];
-    alertView.tag = kAlertTagRequested;
-    [alertView.imageView setImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
-                        placeholderImage:nil];
-    alertView.userInfo = sessionInfo.remoteUserInfo.user_id;
-    alertView.delegate = self;
-    [alertView showWithLimitedTimeInterval:30];
-    [alertView release];
+//    LoochaAlertView *alertView = [[LoochaAlertView alloc] initWithTitle:@"请求与您会话"
+//                                                                message:sessionInfo.remoteUserInfo.name
+//                                                       buttonTitleArray:[NSArray arrayWithObjects:@"接受", @"拒绝", nil]];
+//    alertView.tag = kAlertTagRequested;
+//    [alertView.imageView setImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
+//                        placeholderImage:nil];
+//    alertView.userInfo = sessionInfo.remoteUserInfo.user_id;
+//    alertView.delegate = self;
+//    [alertView showWithLimitedTimeInterval:30];
+//    [alertView release];
     
     [promptPlayer start];
 }
 
 - (void)showMessageAlert:(NSString *)msg
 {
-    LoochaAlertView *alertView = [[LoochaAlertView alloc] initWithTitle:sessionInfo.remoteUserInfo.name
-                                                                message:msg
-                                                       buttonTitleArray:[NSArray arrayWithObjects:@"OK", nil]];
-    alertView.tag = kAlertTagRemoteQuit;
-    [alertView.imageView setImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
-                        placeholderImage:nil];
-    alertView.userInfo = sessionInfo.remoteUserInfo.user_id;
-    alertView.delegate = self;
-    [alertView show];
-    [alertView release];
+//    LoochaAlertView *alertView = [[LoochaAlertView alloc] initWithTitle:sessionInfo.remoteUserInfo.name
+//                                                                message:msg
+//                                                       buttonTitleArray:[NSArray arrayWithObjects:@"OK", nil]];
+//    alertView.tag = kAlertTagRemoteQuit;
+//    [alertView.imageView setImageWithURL:[CampusSingleton convertNeedPath:sessionInfo.remoteUserInfo.avatar]
+//                        placeholderImage:nil];
+//    alertView.userInfo = sessionInfo.remoteUserInfo.user_id;
+//    alertView.delegate = self;
+//    [alertView show];
+//    [alertView release];
 }
 
-- (void)makeSessionInfoWithMsg:(Push2TalkMsg *)msg
-{
-    self.remoteSDP = msg.connectivity;
-    
-    FriendHandler *handler = [[FriendHandler alloc] init];
-    NSDictionary *dic = [handler getMyFriendWithFriendId:msg.otherUserId];
-    [handler release];
-    
-    UserInfo *userInfo = [[UserInfo alloc] init];
-    if (dic) {
-        userInfo.user_id = msg.otherUserId;
-        userInfo.avatar = [dic objectForKey:FRIEND_AVATAR];
-        userInfo.name = [dic objectForKey:FRIEND_NAME];
-    }
-    else {
-        StudentDAO *dao = [[StudentDAO alloc] init];
-        NSArray *dicts = [dao searchStudentById:msg.otherUserId withType:0 waitUntilDone:YES];
-        dic = [dicts lastObject];
-        [dao release];
-        if (dic) {
-            userInfo.user_id = msg.otherUserId;
-            userInfo.avatar = [dic objectForKey:STUDENT_AVATAR];
-            userInfo.name = [dic objectForKey:STUDENT_NAME];
-        }
-    }
-    
-    if (userInfo.avatar == nil) {
-        userInfo.avatar = [[NSBundle mainBundle] pathForResource:@"face_default" ofType:@"png"];
-    }
-    if (userInfo.name == nil) {
-        userInfo.name = @"未知姓名";
-    }
-    
-    TalkSessionInfo *tsi = [[TalkSessionInfo alloc] init];
-    tsi.userType = kPush2TalkRecver;
-    tsi.remoteSampleRate = msg.samplerate;
-    tsi.remoteUserInfo = userInfo;
-    self.sessionInfo = tsi;
-    [tsi release];
-    [userInfo release];
-}
+//- (void)makeSessionInfoWithMsg:(Push2TalkMsg *)msg
+//{
+//    self.remoteSDP = msg.connectivity;
+//    
+//    FriendHandler *handler = [[FriendHandler alloc] init];
+//    NSDictionary *dic = [handler getMyFriendWithFriendId:msg.otherUserId];
+//    [handler release];
+//    
+//    UserInfo *userInfo = [[UserInfo alloc] init];
+//    if (dic) {
+//        userInfo.user_id = msg.otherUserId;
+//        userInfo.avatar = [dic objectForKey:FRIEND_AVATAR];
+//        userInfo.name = [dic objectForKey:FRIEND_NAME];
+//    }
+//    else {
+//        StudentDAO *dao = [[StudentDAO alloc] init];
+//        NSArray *dicts = [dao searchStudentById:msg.otherUserId withType:0 waitUntilDone:YES];
+//        dic = [dicts lastObject];
+//        [dao release];
+//        if (dic) {
+//            userInfo.user_id = msg.otherUserId;
+//            userInfo.avatar = [dic objectForKey:STUDENT_AVATAR];
+//            userInfo.name = [dic objectForKey:STUDENT_NAME];
+//        }
+//    }
+//    
+//    if (userInfo.avatar == nil) {
+//        userInfo.avatar = [[NSBundle mainBundle] pathForResource:@"face_default" ofType:@"png"];
+//    }
+//    if (userInfo.name == nil) {
+//        userInfo.name = @"未知姓名";
+//    }
+//    
+//    TalkSessionInfo *tsi = [[TalkSessionInfo alloc] init];
+//    tsi.userType = kPush2TalkRecver;
+//    tsi.remoteSampleRate = msg.samplerate;
+//    tsi.remoteUserInfo = userInfo;
+//    self.sessionInfo = tsi;
+//    [tsi release];
+//    [userInfo release];
+//}
 
 - (void)handlePush2TalkRemoteMsg:(id)value
 {
@@ -364,36 +359,36 @@ extern "C" {
                 [self stopStunThread];
                 [self closePush2Talk];
                 
-                LoochaAlertView *alertView = [[LoochaAlertView loochaAlertViews] lastObject];
-                if (alertView) {
-                    [alertView dismissAnimated:YES];
-                }
-                else {
-                    NSString *msgText = nil;
-                    
-                    switch (msg.content) {
-                        case kContentPeerBusy:
-                            msgText = @"对方忙，请稍后再拨";
-                            break;
-                            
-                        case kContentPeerReject:
-                            msgText = @"对方忙，请稍后再拨";
-                            break;
-                            
-                        case kContentPeerShutDown:
-                            msgText = @"您的好友已结束对讲!";
-                            break;
-                            
-                        case kContentPhoneCallInterrupt:
-                            msgText = @"对不起，对方正在接听电话!";
-                            break;
-                            
-                        default:
-                            msgText = @"对方忙，请稍后再拨";
-                            break;
-                    }
-                    [self showMessageAlert:msgText];
-                }
+//                LoochaAlertView *alertView = [[LoochaAlertView loochaAlertViews] lastObject];
+//                if (alertView) {
+//                    [alertView dismissAnimated:YES];
+//                }
+//                else {
+//                    NSString *msgText = nil;
+//                    
+//                    switch (msg.content) {
+//                        case kContentPeerBusy:
+//                            msgText = @"对方忙，请稍后再拨";
+//                            break;
+//                            
+//                        case kContentPeerReject:
+//                            msgText = @"对方忙，请稍后再拨";
+//                            break;
+//                            
+//                        case kContentPeerShutDown:
+//                            msgText = @"您的好友已结束对讲!";
+//                            break;
+//                            
+//                        case kContentPhoneCallInterrupt:
+//                            msgText = @"对不起，对方正在接听电话!";
+//                            break;
+//                            
+//                        default:
+//                            msgText = @"对方忙，请稍后再拨";
+//                            break;
+//                    }
+//                    [self showMessageAlert:msgText];
+//                }
                 [self resetStates];
             }
         }
@@ -478,41 +473,41 @@ extern "C" {
 }
 
 #pragma mark - LoochaAlertViewDelegate
-
-- (void)loochaAlertView:(LoochaAlertView *)alertView didSelectButtonAt:(NSUInteger)index
-{
-    if (alertView.tag == kAlertTagRemoteQuit) {
-        // busy = NO;
-        // do nothing
-    }
-    else if (alertView.tag == kAlertTagRequested) {
-        if (index == 0) {
-            RCDebug(@"Push2TalkAlertView - OK");
-            [self sendPacketRemoteUser:sessionInfo.remoteUserInfo.user_id request:R_ACK content:0];
-            self.r_ack_sent = YES;
-        }
-        else {
-            RCDebug(@"Push2TalkAlertView - IGNORE");
-            
-            [self sendPacketRemoteUser:sessionInfo.remoteUserInfo.user_id request:D_CON content:kContentPeerReject];
-            [self resetStates];
-        }
-    }
-}
-
-- (void)timeoutShowingLoochaAlertView:(LoochaAlertView *)alertView
-{
-    RCDebug(@"Push2TalkAlertView - TIMEOUT");
-    
-    [self sendPacketRemoteUser:alertView.userInfo request:D_CON content:kContentPeerReject];
-}
-
-- (void)loochaAlertViewDidDismiss:(LoochaAlertView *)alertView
-{
-    if (alertView.tag == kAlertTagRequested) {
-        [promptPlayer stopImmediately:YES];
-    }
-}
+//
+//- (void)loochaAlertView:(LoochaAlertView *)alertView didSelectButtonAt:(NSUInteger)index
+//{
+//    if (alertView.tag == kAlertTagRemoteQuit) {
+//        // busy = NO;
+//        // do nothing
+//    }
+//    else if (alertView.tag == kAlertTagRequested) {
+//        if (index == 0) {
+//            RCDebug(@"Push2TalkAlertView - OK");
+//            [self sendPacketRemoteUser:sessionInfo.remoteUserInfo.user_id request:R_ACK content:0];
+//            self.r_ack_sent = YES;
+//        }
+//        else {
+//            RCDebug(@"Push2TalkAlertView - IGNORE");
+//            
+//            [self sendPacketRemoteUser:sessionInfo.remoteUserInfo.user_id request:D_CON content:kContentPeerReject];
+//            [self resetStates];
+//        }
+//    }
+//}
+//
+//- (void)timeoutShowingLoochaAlertView:(LoochaAlertView *)alertView
+//{
+//    RCDebug(@"Push2TalkAlertView - TIMEOUT");
+//    
+//    [self sendPacketRemoteUser:alertView.userInfo request:D_CON content:kContentPeerReject];
+//}
+//
+//- (void)loochaAlertViewDidDismiss:(LoochaAlertView *)alertView
+//{
+//    if (alertView.tag == kAlertTagRequested) {
+//        [promptPlayer stopImmediately:YES];
+//    }
+//}
 
 - (void)handleTalkStarted
 {
@@ -635,7 +630,7 @@ extern "C" {
         RCError(@"another push2TalkController<reomteUser:%@> exist", self.push2TalkController.sessionInfo.remoteUserInfo.user_id);
     }
     else {
-        [Global sendMessageToControllers:kTaskMsgRevealMainPage withResult:kTaskMsgRevealMainPage withArg:nil];
+      //  [Global sendMessageToControllers:kTaskMsgRevealMainPage withResult:kTaskMsgRevealMainPage withArg:nil];
         Push2TalkController *controller = [[Push2TalkController alloc] initWithSessionInfo:sessionInfo];
         self.push2TalkController = controller;
         [self.rootViewController.navigationController pushViewController:controller animated:YES];
