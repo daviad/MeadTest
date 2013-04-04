@@ -1,0 +1,247 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		523C0EC0170D84D50068A4AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523C0EBF170D84D50068A4AF /* Foundation.framework */; };
+		523C0EC5170D84D50068A4AF /* Reachability.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 523C0EC4170D84D50068A4AF /* Reachability.h */; };
+		523C0EC7170D84D50068A4AF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C0EC6170D84D50068A4AF /* Reachability.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		523C0EBA170D84D50068A4AF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				523C0EC5170D84D50068A4AF /* Reachability.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		523C0EBC170D84D50068A4AF /* libReachability.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReachability.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		523C0EBF170D84D50068A4AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		523C0EC3170D84D50068A4AF /* Reachability-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability-Prefix.pch"; sourceTree = "<group>"; };
+		523C0EC4170D84D50068A4AF /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		523C0EC6170D84D50068A4AF /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		523C0EB9170D84D50068A4AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523C0EC0170D84D50068A4AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		523C0EB3170D84D50068A4AF = {
+			isa = PBXGroup;
+			children = (
+				523C0EC1170D84D50068A4AF /* Reachability */,
+				523C0EBE170D84D50068A4AF /* Frameworks */,
+				523C0EBD170D84D50068A4AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		523C0EBD170D84D50068A4AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				523C0EBC170D84D50068A4AF /* libReachability.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		523C0EBE170D84D50068A4AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				523C0EBF170D84D50068A4AF /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		523C0EC1170D84D50068A4AF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				523C0EC4170D84D50068A4AF /* Reachability.h */,
+				523C0EC6170D84D50068A4AF /* Reachability.m */,
+				523C0EC2170D84D50068A4AF /* Supporting Files */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		523C0EC2170D84D50068A4AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				523C0EC3170D84D50068A4AF /* Reachability-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		523C0EBB170D84D50068A4AF /* Reachability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523C0ECA170D84D50068A4AF /* Build configuration list for PBXNativeTarget "Reachability" */;
+			buildPhases = (
+				523C0EB8170D84D50068A4AF /* Sources */,
+				523C0EB9170D84D50068A4AF /* Frameworks */,
+				523C0EBA170D84D50068A4AF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reachability;
+			productName = Reachability;
+			productReference = 523C0EBC170D84D50068A4AF /* libReachability.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		523C0EB4170D84D50068A4AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = daviad;
+			};
+			buildConfigurationList = 523C0EB7170D84D50068A4AF /* Build configuration list for PBXProject "Reachability" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 523C0EB3170D84D50068A4AF;
+			productRefGroup = 523C0EBD170D84D50068A4AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				523C0EBB170D84D50068A4AF /* Reachability */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		523C0EB8170D84D50068A4AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523C0EC7170D84D50068A4AF /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		523C0EC8170D84D50068A4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		523C0EC9170D84D50068A4AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		523C0ECB170D84D50068A4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Reachability.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Reachability/Reachability-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		523C0ECC170D84D50068A4AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Reachability.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Reachability/Reachability-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		523C0EB7170D84D50068A4AF /* Build configuration list for PBXProject "Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523C0EC8170D84D50068A4AF /* Debug */,
+				523C0EC9170D84D50068A4AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523C0ECA170D84D50068A4AF /* Build configuration list for PBXNativeTarget "Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523C0ECB170D84D50068A4AF /* Debug */,
+				523C0ECC170D84D50068A4AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 523C0EB4170D84D50068A4AF /* Project object */;
+}
