@@ -886,10 +886,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         
         // this copies your audio out to a temp buffer but you should be able to iterate through this buffer instead
         SInt32* readBuffer = (SInt32 *)malloc(numSamplesInBuffer * sizeof(SInt32));
+        
+        UInt32 mNumberBuffers = audioBufferList.mNumberBuffers;
+        NSLog(@"buffers number is %d ",(unsigned int)mNumberBuffers);
+        
+        
         memcpy( readBuffer, audioBufferList.mBuffers[0].mData, numSamplesInBuffer*sizeof(SInt32));
  //----------------
         
-        
+/*
         
         size_t _pcmBufferSize;
         char *_pcmBuffer;
@@ -951,6 +956,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             NSLog(@"error creating audio converter: %ld", st);
            
         }
+ 
+ 
+ */
+//        -----------------------------
     }
     
 }

@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Opus/Opus.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Libnice/Libnice.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Push2TallkApp/Push2TallkApp.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MediaSenderApp/MediaSenderApp.xcodeproj">
    </FileRef>
    <FileRef
