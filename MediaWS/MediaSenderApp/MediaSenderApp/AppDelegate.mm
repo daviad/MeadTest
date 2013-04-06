@@ -38,13 +38,16 @@ extern "C"
 #include <iostream>
 #include <string>
 
-//
+
 
 
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <CoreMedia/CoreMedia.h>
 #include <malloc/malloc.h>
+
+
+#import "RCQueue.h"
 
 using namespace std;
 using namespace jrtplib;
@@ -75,6 +78,9 @@ using namespace jrtplib;
     struct SwsContext  *img_convert_ctxRec;
     
     UIImageView *imgView;
+    
+    
+    NSMutableData *audioData;
 }
 
 @end
@@ -678,7 +684,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
     
     
-    
+    if (sampleBuffer == NULL) {
+        NSLog(@"sample buffer is null ");
+        return;
+    }
     
 
     
@@ -884,14 +893,40 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                                 &buffer
                                                                 );
         
-        // this copies your audio out to a temp buffer but you should be able to iterate through this buffer instead
-        SInt32* readBuffer = (SInt32 *)malloc(numSamplesInBuffer * sizeof(SInt32));
-        
+        // this copies your audio out to a temp buffer 
         UInt32 mNumberBuffers = audioBufferList.mNumberBuffers;
-        NSLog(@"buffers number is %d ",(unsigned int)mNumberBuffers);
+        NSLog(@"audio buffers number is %d ",(unsigned int)mNumberBuffers);
+   
+        for (int i= 0; i< mNumberBuffers; i++)
+        {
+              AudioBuffer audioBuffer = audioBufferList.mBuffers[i];
+            NSLog(@"audio buffer byteSize=%d, numChannels= %d ",(unsigned int)audioBuffer.mDataByteSize,(unsigned int)audioBuffer.mNumberChannels);
+            void* readBuffer = (void *)malloc(audioBuffer.mDataByteSize);
+          
+             memcpy(readBuffer, audioBuffer.mData, audioBuffer.mDataByteSize);
+            free(readBuffer);
+             [audioData appendBytes:audioBuffer.mData length:audioBuffer.mDataByteSize];
+
+        }
         
         
-        memcpy( readBuffer, audioBufferList.mBuffers[0].mData, numSamplesInBuffer*sizeof(SInt32));
+//        
+//        static int xx = 0;
+//        xx++;
+//        if (xx > 100) {
+//            
+//            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//            NSString *documentsDirectory=[paths objectAtIndex:0];
+//            NSString *path = [documentsDirectory stringByAppendingPathComponent:@"xx"];
+//            
+//            [audioData writeToFile:path atomically:YES];
+//        }
+//   
+        
+        
+        
+        
+        
  //----------------
         
 /*
@@ -1282,6 +1317,9 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     
 }
 
+
+
+#pragma mark ---
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -1290,7 +1328,7 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     [self.window makeKeyAndVisible];
     
     
-    
+    audioData = [[NSMutableData alloc] init];
     
     
     UIButton *btn = [[UIButton alloc] init];

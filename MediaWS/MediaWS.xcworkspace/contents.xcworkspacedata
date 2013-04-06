@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PureUtilities/PureUtilities.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Utilities/Utilities.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Reachability/Reachability.xcodeproj">
    </FileRef>
    <FileRef
@@ -12,9 +18,6 @@
    </FileRef>
    <FileRef
       location = "group:Libnice/Libnice.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Push2TallkApp/Push2TallkApp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:MediaSenderApp/MediaSenderApp.xcodeproj">

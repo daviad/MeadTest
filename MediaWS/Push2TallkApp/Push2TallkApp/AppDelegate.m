@@ -7,8 +7,61 @@
 //
 
 #import "AppDelegate.h"
+#import "Stunwapper.h"
+
+@interface AppDelegate()
+
+{
+    int stream_id;
+    CFRunLoopRef rl;
+    NSThread *thread;
+}
+
+@end
+
 
 @implementation AppDelegate
+
+
+
+
+- (void)startStun:(id)controllingObj
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    rl = CFRunLoopGetCurrent();
+    NSString *StunAddress = kStunAddress;
+    stream_id = StunCreate(self, [StunAddress UTF8String], kStunPort , [controllingObj intValue]);
+    CFRunLoopRun();
+    
+    RCDebug(@"stun thread stopped");
+    [pool release];
+}
+
+
+- (void)handleStunAddr:(NSString *)addr Stream:(int)theStream_id
+{
+    RCDebug(@"addr = %@", addr);
+    
+       stream_id = theStream_id;
+//    if (sessionInfo.userType == kPush2TalkCaller) {
+//        // send q_sdp, then wait for r_sdp
+//        [self sendPacketRemoteUser:sessionInfo.remoteUserInfo.user_id request:Q_SDP connectivity:addr content:0 samplerate:sessionInfo.localSampleRate];
+//    }
+//    else {
+//        [self sendPacketRemoteUser:sessionInfo.remoteUserInfo.user_id request:R_SDP connectivity:addr content:0 samplerate:sessionInfo.localSampleRate];
+//        GetSDPDec(self, stream_id, [self.remoteSDP UTF8String]);
+//    }
+}
+
+- (void)startStunThread:(int)controlling
+{
+    if (thread == NULL)
+    {
+        RCDebug(@"starting stun thread");
+        thread = [[NSThread alloc] initWithTarget:self selector:@selector(startStun :) object:[NSNumber numberWithInt:controlling]];
+        [thread start];
+    }
+}
 
 - (void)dealloc
 {
@@ -20,6 +73,16 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    
+    [self startStunThread:1];
+    
+    
+    
+    
+    
+    
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

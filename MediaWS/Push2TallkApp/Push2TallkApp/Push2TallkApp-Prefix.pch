@@ -16,7 +16,7 @@
 #endif
 
 
-#define PRODUCT_TEST  0
+#define PRODUCT_TEST 1
 
 #if PRODUCT_TEST
 
@@ -32,7 +32,7 @@
 
 #endif
 
-#define kStunAddress             @"61.147.75.250"
+#define kStunAddress               @"61.147.75.250"
 #define kStunPort                3478
 
 

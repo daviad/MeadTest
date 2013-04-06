@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5258A0DC17102C2B00504D1A /* libPureUtilities.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5258A0D917102C0E00504D1A /* libPureUtilities.a */; };
+		5258A0DF17102E8C00504D1A /* TalkSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5258A0DE17102E8C00504D1A /* TalkSender.m */; };
+		5258A0E51710308100504D1A /* Opus.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 5258A0E41710308100504D1A /* Opus.xcodeproj */; };
+		5281EF8817102B79009791A0 /* PureUtilities.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */; };
+		52A94B53171030B000F22ABC /* libOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A94B501710309400F22ABC /* libOpus.a */; };
 		52ACA43716FCA11C002A140B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ACA43616FCA11B002A140B /* AssetsLibrary.framework */; };
 		52ACA43916FCA16F002A140B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ACA43816FCA16F002A140B /* CoreMedia.framework */; };
 		52DF740C16FC96DF002ECDE9 /* RTPLib.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */; };
@@ -35,6 +40,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5258A0D817102C0E00504D1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5281EF1717102909009791A0;
+			remoteInfo = PureUtilities;
+		};
+		5258A0DA17102C1900504D1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5281EF1617102909009791A0;
+			remoteInfo = PureUtilities;
+		};
+		52A94B4F1710309400F22ABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5258A0E41710308100504D1A /* Opus.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5275C91B170D55AC00D7A3E5;
+			remoteInfo = Opus;
+		};
+		52A94B51171030AA00F22ABC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5258A0E41710308100504D1A /* Opus.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5275C91A170D55AC00D7A3E5;
+			remoteInfo = Opus;
+		};
 		52DD93DE16FC986600583BAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */;
@@ -52,6 +85,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5258A0DD17102E8C00504D1A /* TalkSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkSender.h; sourceTree = "<group>"; };
+		5258A0DE17102E8C00504D1A /* TalkSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkSender.m; sourceTree = "<group>"; };
+		5258A0E41710308100504D1A /* Opus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Opus.xcodeproj; path = ../Opus/Opus.xcodeproj; sourceTree = "<group>"; };
+		5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PureUtilities.xcodeproj; path = ../PureUtilities/PureUtilities.xcodeproj; sourceTree = "<group>"; };
 		52ACA43616FCA11B002A140B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		52ACA43816FCA16F002A140B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RTPLib.xcodeproj; path = ../RTPLib/RTPLib.xcodeproj; sourceTree = "<group>"; };
@@ -171,6 +208,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A94B53171030B000F22ABC /* libOpus.a in Frameworks */,
+				5258A0DC17102C2B00504D1A /* libPureUtilities.a in Frameworks */,
 				52ACA43916FCA16F002A140B /* CoreMedia.framework in Frameworks */,
 				52ACA43716FCA11C002A140B /* AssetsLibrary.framework in Frameworks */,
 				52DF742716FC9827002ECDE9 /* CoreImage.framework in Frameworks */,
@@ -195,6 +234,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5258A0D517102C0E00504D1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5258A0D917102C0E00504D1A /* libPureUtilities.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52A94B4C1710309400F22ABC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52A94B501710309400F22ABC /* libOpus.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		52DD93DB16FC986600583BAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +261,8 @@
 		E45603E616FBF57000DA6247 = {
 			isa = PBXGroup;
 			children = (
+				5258A0E41710308100504D1A /* Opus.xcodeproj */,
+				5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */,
 				52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */,
 				E45603F816FBF57000DA6247 /* MediaSenderApp */,
 				E45603F116FBF57000DA6247 /* Frameworks */,
@@ -253,6 +310,8 @@
 				E456046916FBF60B00DA6247 /* lib */,
 				E456040116FBF57000DA6247 /* AppDelegate.h */,
 				E456040216FBF57000DA6247 /* AppDelegate.mm */,
+				5258A0DD17102E8C00504D1A /* TalkSender.h */,
+				5258A0DE17102E8C00504D1A /* TalkSender.m */,
 				E45603F916FBF57000DA6247 /* Supporting Files */,
 			);
 			path = MediaSenderApp;
@@ -439,6 +498,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				52A94B52171030AA00F22ABC /* PBXTargetDependency */,
+				5258A0DB17102C1900504D1A /* PBXTargetDependency */,
 				52DD93E116FC987700583BAC /* PBXTargetDependency */,
 			);
 			name = MediaSenderApp;
@@ -467,6 +528,14 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 52A94B4C1710309400F22ABC /* Products */;
+					ProjectRef = 5258A0E41710308100504D1A /* Opus.xcodeproj */;
+				},
+				{
+					ProductGroup = 5258A0D517102C0E00504D1A /* Products */;
+					ProjectRef = 5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */;
+				},
+				{
 					ProductGroup = 52DD93DB16FC986600583BAC /* Products */;
 					ProjectRef = 52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */;
 				},
@@ -479,6 +548,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5258A0D917102C0E00504D1A /* libPureUtilities.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPureUtilities.a;
+			remoteRef = 5258A0D817102C0E00504D1A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52A94B501710309400F22ABC /* libOpus.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOpus.a;
+			remoteRef = 52A94B4F1710309400F22ABC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		52DD93DF16FC986600583BAC /* libRTPLib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -498,6 +581,8 @@
 				E456040716FBF57000DA6247 /* Default@2x.png in Resources */,
 				E456040916FBF57000DA6247 /* Default-568h@2x.png in Resources */,
 				52DF740C16FC96DF002ECDE9 /* RTPLib.xcodeproj in Resources */,
+				5281EF8817102B79009791A0 /* PureUtilities.xcodeproj in Resources */,
+				5258A0E51710308100504D1A /* Opus.xcodeproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,12 +595,23 @@
 			files = (
 				E45603FF16FBF57000DA6247 /* main.m in Sources */,
 				E456040316FBF57000DA6247 /* AppDelegate.mm in Sources */,
+				5258A0DF17102E8C00504D1A /* TalkSender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5258A0DB17102C1900504D1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PureUtilities;
+			targetProxy = 5258A0DA17102C1900504D1A /* PBXContainerItemProxy */;
+		};
+		52A94B52171030AA00F22ABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Opus;
+			targetProxy = 52A94B51171030AA00F22ABC /* PBXContainerItemProxy */;
+		};
 		52DD93E116FC987700583BAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RTPLib;
@@ -598,6 +694,8 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../RTPLib/RTPLib\"/**",
 					"\"$(SRCROOT)/MediaSenderApp/include\"",
+					"\"$(SRCROOT)/../PureUtilities/PureUtilities\"/**",
+					"\"$(SRCROOT)/../Opus/Opus/include\"",
 				);
 				INFOPLIST_FILE = "MediaSenderApp/MediaSenderApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -631,6 +729,8 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../RTPLib/RTPLib\"/**",
 					"\"$(SRCROOT)/MediaSenderApp/include\"",
+					"\"$(SRCROOT)/../PureUtilities/PureUtilities\"/**",
+					"\"$(SRCROOT)/../Opus/Opus/include\"",
 				);
 				INFOPLIST_FILE = "MediaSenderApp/MediaSenderApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
