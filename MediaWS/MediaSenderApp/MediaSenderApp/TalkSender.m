@@ -8,7 +8,7 @@
 
 #import "TalkSender.h"
 #import "RCLog.h"
-
+#import "OPUSwrapper.h"
 
 
 #define ENCODE_BUFFER_SIZE 1440
@@ -129,7 +129,7 @@
 {
     int newEnd = pkgBufferEnd + length;
     
-    memcpy(pkgBuffer + pkgBufferEnd, buf, length * sizeof(short));
+    memcpy(pkgBuffer + pkgBufferEnd, buf, length );
     
     if (newEnd > pkgBufferSize) {
         RCFatal(@"pkgBufferEnd + length > pkgBufferSize");
@@ -179,29 +179,29 @@ static void RecordBufferListen(id o, short *buf, UInt32 length)
     [pool drain];
 }
 
-//- (id)initWithSampleRate:(NSInteger)samplerate talkManager:(TalkManager *)tm
-//{
-//    self = [super init];
-//    if (self) {
-//        lock = [[NSConditionLock alloc] initWithCondition:CONDITION_NO_DATA];
-//        frameQueue = [[RCQueue alloc] init];
-//        dataQueue = [[RCQueue alloc] init];
-//        reuseFrames = [[NSMutableArray alloc] init];
-//        
-//        talkManager = [tm retain];
-//        opusEncodeOpen(samplerate, 1);
-//        
+- (id)initWithSampleRate:(NSInteger)samplerate talkManager:(id *)tm
+{
+    self = [super init];
+    if (self) {
+        lock = [[NSConditionLock alloc] initWithCondition:CONDITION_NO_DATA];
+        frameQueue = [[RCQueue alloc] init];
+        dataQueue = [[RCQueue alloc] init];
+        reuseFrames = [[NSMutableArray alloc] init];
+        
+ //       talkManager = [tm retain];
+        opusEncodeOpen(samplerate, 1);
+        
 //        recorder = [[AudioStreamRecord alloc] init];
 //        [recorder setupAudioSample:samplerate Channel:1];
 //        [recorder setupAudioCallback:RecordBufferListen AndObj:self];
-//        
-//        frameSize = samplerate * 60/1000;
-//        pkgBufferSize = 2 * frameSize;
-//        pkgBuffer = malloc(pkgBufferSize * sizeof(short));
-//        pkgBufferEnd = 0;
-//    }
-//    return self;
-//}
+        
+        frameSize = samplerate * 60/1000;
+        pkgBufferSize = 2 * frameSize;
+        pkgBuffer = malloc(pkgBufferSize * sizeof(short));
+        pkgBufferEnd = 0;
+    }
+    return self;
+}
 
 - (void)dealloc
 {
@@ -232,16 +232,16 @@ static void RecordBufferListen(id o, short *buf, UInt32 length)
 {
     self.talking = YES;
     [self prepare];
-    if (![recorder isRecording]) {
-        [recorder startRecording];
-    }
+//    if (![recorder isRecording]) {
+//        [recorder startRecording];
+//    }
 }
 
 - (void)stop
 {
-    if ([recorder isRecording]) {
-        [recorder stopRecording];
-    }
+//    if ([recorder isRecording]) {
+//        [recorder stopRecording];
+//    }
     self.talking = NO;
 }
 

@@ -40,7 +40,7 @@
 
 @property (nonatomic, assign) id<TalkSenderDelegate> delegate;
 
-//- (id)initWithSampleRate:(NSInteger)samplerate talkManager:(TalkManager *)talkManager;
+- (id)initWithSampleRate:(NSInteger)samplerate talkManager:(id *)talkManager;
 
 - (void)prepare;
 
@@ -49,5 +49,8 @@
 - (void)stop;
 
 - (void)reset;
+
+
+- (void)handleAudioBuffer:(short *)buf length:(UInt32)length;
 
 @end

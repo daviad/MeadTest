@@ -37,6 +37,7 @@
 		E456041216FBF5B100DA6247 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E456041116FBF5B100DA6247 /* libiconv.dylib */; };
 		E456050616FC043800DA6247 /* libbz2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E456050516FC043800DA6247 /* libbz2.1.0.dylib */; };
 		E456050816FC046800DA6247 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E456050716FC046800DA6247 /* libz.1.2.5.dylib */; };
+		E4E7BCFF1710F27300772C57 /* OPUSwrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4E7BCFD1710F27300772C57 /* OPUSwrapper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,8 @@
 		E4C79F9E1701758C00C86D47 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		E4C79F9F1701758C00C86D47 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		E4C79FA81701760A00C86D47 /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libx264.a; sourceTree = "<group>"; };
+		E4E7BCFD1710F27300772C57 /* OPUSwrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OPUSwrapper.cpp; sourceTree = "<group>"; };
+		E4E7BCFE1710F27300772C57 /* OPUSwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPUSwrapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				E456046916FBF60B00DA6247 /* lib */,
 				E456040116FBF57000DA6247 /* AppDelegate.h */,
 				E456040216FBF57000DA6247 /* AppDelegate.mm */,
+				E4E7BCFD1710F27300772C57 /* OPUSwrapper.cpp */,
+				E4E7BCFE1710F27300772C57 /* OPUSwrapper.h */,
 				5258A0DD17102E8C00504D1A /* TalkSender.h */,
 				5258A0DE17102E8C00504D1A /* TalkSender.m */,
 				E45603F916FBF57000DA6247 /* Supporting Files */,
@@ -596,6 +601,7 @@
 				E45603FF16FBF57000DA6247 /* main.m in Sources */,
 				E456040316FBF57000DA6247 /* AppDelegate.mm in Sources */,
 				5258A0DF17102E8C00504D1A /* TalkSender.m in Sources */,
+				E4E7BCFF1710F27300772C57 /* OPUSwrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +701,7 @@
 					"\"$(SRCROOT)/../RTPLib/RTPLib\"/**",
 					"\"$(SRCROOT)/MediaSenderApp/include\"",
 					"\"$(SRCROOT)/../PureUtilities/PureUtilities\"/**",
-					"\"$(SRCROOT)/../Opus/Opus/include\"",
+					"\"$(SRCROOT)/../Opus/Opus/\"/**",
 				);
 				INFOPLIST_FILE = "MediaSenderApp/MediaSenderApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -730,7 +736,7 @@
 					"\"$(SRCROOT)/../RTPLib/RTPLib\"/**",
 					"\"$(SRCROOT)/MediaSenderApp/include\"",
 					"\"$(SRCROOT)/../PureUtilities/PureUtilities\"/**",
-					"\"$(SRCROOT)/../Opus/Opus/include\"",
+					"\"$(SRCROOT)/../Opus/Opus/\"/**",
 				);
 				INFOPLIST_FILE = "MediaSenderApp/MediaSenderApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (

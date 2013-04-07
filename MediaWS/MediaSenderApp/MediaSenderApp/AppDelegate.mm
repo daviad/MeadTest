@@ -46,8 +46,18 @@ extern "C"
 #import <CoreMedia/CoreMedia.h>
 #include <malloc/malloc.h>
 
+//audio
+#import "TalkSender.h"
 
-#import "RCQueue.h"
+
+
+
+
+
+
+
+
+
 
 using namespace std;
 using namespace jrtplib;
@@ -79,8 +89,10 @@ using namespace jrtplib;
     
     UIImageView *imgView;
     
-    
+ //audio
     NSMutableData *audioData;
+    TalkSender *tallSender;
+    
 }
 
 @end
@@ -906,6 +918,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
              memcpy(readBuffer, audioBuffer.mData, audioBuffer.mDataByteSize);
             free(readBuffer);
              [audioData appendBytes:audioBuffer.mData length:audioBuffer.mDataByteSize];
+            
+            [tallSender handleAudioBuffer:(short *)audioBuffer.mData length:audioBuffer.mDataByteSize];
 
         }
         
@@ -1319,7 +1333,7 @@ NSData* imageToBuffer( CMSampleBufferRef source)
 
 
 
-#pragma mark ---
+#pragma mark --- application Delegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -1329,6 +1343,10 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     
     
     audioData = [[NSMutableData alloc] init];
+    tallSender = [[TalkSender alloc] initWithSampleRate:44100
+                                            talkManager:nil];
+    
+    
     
     
     UIButton *btn = [[UIButton alloc] init];
