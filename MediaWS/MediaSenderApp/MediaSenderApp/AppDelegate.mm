@@ -16,6 +16,9 @@ extern "C"
 #import "libavcodec/avcodec.h"
 #import "libavutil/avutil.h"
 #import "libswscale/swscale.h"
+    
+
+    
 #ifdef __cplusplus
 }
 #endif
@@ -58,6 +61,12 @@ extern "C"
 
 
 
+<<<<<<< HEAD
+=======
+
+#import "OPUSwrapper.h"
+#import "RCQueue.h"
+>>>>>>> x
 
 using namespace std;
 using namespace jrtplib;
@@ -75,6 +84,8 @@ using namespace jrtplib;
     
     dispatch_queue_t  videoQueue;
     dispatch_queue_t  audioQueue;
+    
+    dispatch_queue_t  sendAudioQueue;
     
     
     AVCodecContext     *pCodecCtx;
@@ -911,15 +922,39 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
    
         for (int i= 0; i< mNumberBuffers; i++)
         {
+            
+            //获取每一帧
+            //          用opus压缩每秒帧
+            //            发送压缩好的数据
+            
               AudioBuffer audioBuffer = audioBufferList.mBuffers[i];
             NSLog(@"audio buffer byteSize=%d, numChannels= %d ",(unsigned int)audioBuffer.mDataByteSize,(unsigned int)audioBuffer.mNumberChannels);
             void* readBuffer = (void *)malloc(audioBuffer.mDataByteSize);
           
              memcpy(readBuffer, audioBuffer.mData, audioBuffer.mDataByteSize);
-            free(readBuffer);
+           
              [audioData appendBytes:audioBuffer.mData length:audioBuffer.mDataByteSize];
             
+<<<<<<< HEAD
             [tallSender handleAudioBuffer:(short *)audioBuffer.mData length:audioBuffer.mDataByteSize];
+=======
+            
+            
+            
+            unsigned char enbuf [audioBuffer.mDataByteSize];
+            memset(enbuf, 0, audioBuffer.mDataByteSize);
+            
+            int enlen = opusEncode((const short *)readBuffer, enbuf, audioBuffer.mDataByteSize);
+            
+            NSLog(@"RTP:SEND raw data length : %d", enlen);
+            int status = sess.SendPacket((void *)enbuf, enlen);
+            if (status) {
+                NSLog(@"RTP:SEND error : %s", RTPGetErrorString(status).c_str());
+            }
+             free(readBuffer);
+            
+
+>>>>>>> x
 
         }
         
@@ -1343,8 +1378,12 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     
     
     audioData = [[NSMutableData alloc] init];
+<<<<<<< HEAD
     tallSender = [[TalkSender alloc] initWithSampleRate:44100
                                             talkManager:nil];
+=======
+    sendAudioQueue = dispatch_queue_create("send audio queue", NULL);
+>>>>>>> x
     
     
     

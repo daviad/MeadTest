@@ -12,6 +12,8 @@
 		5258A0E51710308100504D1A /* Opus.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 5258A0E41710308100504D1A /* Opus.xcodeproj */; };
 		5281EF8817102B79009791A0 /* PureUtilities.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */; };
 		52A94B53171030B000F22ABC /* libOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A94B501710309400F22ABC /* libOpus.a */; };
+		52A94B7F1713089500F22ABC /* Stunwrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A94B7E1713089500F22ABC /* Stunwrapper.m */; };
+		52A94B8217130AAC00F22ABC /* OPUSwrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52A94B8017130AAC00F22ABC /* OPUSwrapper.cpp */; };
 		52ACA43716FCA11C002A140B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ACA43616FCA11B002A140B /* AssetsLibrary.framework */; };
 		52ACA43916FCA16F002A140B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ACA43816FCA16F002A140B /* CoreMedia.framework */; };
 		52DF740C16FC96DF002ECDE9 /* RTPLib.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */; };
@@ -90,6 +92,10 @@
 		5258A0DE17102E8C00504D1A /* TalkSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkSender.m; sourceTree = "<group>"; };
 		5258A0E41710308100504D1A /* Opus.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Opus.xcodeproj; path = ../Opus/Opus.xcodeproj; sourceTree = "<group>"; };
 		5281EF8717102B79009791A0 /* PureUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PureUtilities.xcodeproj; path = ../PureUtilities/PureUtilities.xcodeproj; sourceTree = "<group>"; };
+		52A94B7D1713089500F22ABC /* Stunwapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stunwapper.h; path = lib/Stunwapper.h; sourceTree = "<group>"; };
+		52A94B7E1713089500F22ABC /* Stunwrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stunwrapper.m; path = lib/Stunwrapper.m; sourceTree = "<group>"; };
+		52A94B8017130AAC00F22ABC /* OPUSwrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OPUSwrapper.cpp; sourceTree = "<group>"; };
+		52A94B8117130AAC00F22ABC /* OPUSwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPUSwrapper.h; sourceTree = "<group>"; };
 		52ACA43616FCA11B002A140B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		52ACA43816FCA16F002A140B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		52DF740B16FC96DF002ECDE9 /* RTPLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RTPLib.xcodeproj; path = ../RTPLib/RTPLib.xcodeproj; sourceTree = "<group>"; };
@@ -309,6 +315,10 @@
 		E45603F816FBF57000DA6247 /* MediaSenderApp */ = {
 			isa = PBXGroup;
 			children = (
+				52A94B8017130AAC00F22ABC /* OPUSwrapper.cpp */,
+				52A94B8117130AAC00F22ABC /* OPUSwrapper.h */,
+				52A94B7D1713089500F22ABC /* Stunwapper.h */,
+				52A94B7E1713089500F22ABC /* Stunwrapper.m */,
 				E456041716FBF60B00DA6247 /* include */,
 				E456046916FBF60B00DA6247 /* lib */,
 				E456040116FBF57000DA6247 /* AppDelegate.h */,
@@ -601,7 +611,12 @@
 				E45603FF16FBF57000DA6247 /* main.m in Sources */,
 				E456040316FBF57000DA6247 /* AppDelegate.mm in Sources */,
 				5258A0DF17102E8C00504D1A /* TalkSender.m in Sources */,
+<<<<<<< HEAD
 				E4E7BCFF1710F27300772C57 /* OPUSwrapper.cpp in Sources */,
+=======
+				52A94B7F1713089500F22ABC /* Stunwrapper.m in Sources */,
+				52A94B8217130AAC00F22ABC /* OPUSwrapper.cpp in Sources */,
+>>>>>>> x
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +716,12 @@
 					"\"$(SRCROOT)/../RTPLib/RTPLib\"/**",
 					"\"$(SRCROOT)/MediaSenderApp/include\"",
 					"\"$(SRCROOT)/../PureUtilities/PureUtilities\"/**",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/../Opus/Opus/\"/**",
+=======
+					"\"$(SRCROOT)/../Opus/Opus\"/**",
+					"\"$(SRCROOT)/../Libnice/Libnice\"",
+>>>>>>> x
 				);
 				INFOPLIST_FILE = "MediaSenderApp/MediaSenderApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -736,7 +756,12 @@
 					"\"$(SRCROOT)/../RTPLib/RTPLib\"/**",
 					"\"$(SRCROOT)/MediaSenderApp/include\"",
 					"\"$(SRCROOT)/../PureUtilities/PureUtilities\"/**",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/../Opus/Opus/\"/**",
+=======
+					"\"$(SRCROOT)/../Opus/Opus\"/**",
+					"\"$(SRCROOT)/../Libnice/Libnice\"",
+>>>>>>> x
 				);
 				INFOPLIST_FILE = "MediaSenderApp/MediaSenderApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
