@@ -935,10 +935,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
            
              [audioData appendBytes:audioBuffer.mData length:audioBuffer.mDataByteSize];
             
-<<<<<<< HEAD
-            [tallSender handleAudioBuffer:(short *)audioBuffer.mData length:audioBuffer.mDataByteSize];
-=======
-            
+
             
             
             unsigned char enbuf [audioBuffer.mDataByteSize];
@@ -954,7 +951,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
              free(readBuffer);
             
 
->>>>>>> x
 
         }
         
