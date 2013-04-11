@@ -2,4 +2,13 @@
 build
 *.xcodeproj/*.pbxuser
 *.xcodeproj/xcuserdata
-MediaWS/DerivedData/
+MediaWS/DerivedData/*
+MediaWS/MediaWS.xcworkspace/xcuserdata/*
+MediaWS/MediaSenderApp/MediaSenderApp.xcodeproj/xcuserdata/*
+MediaWS/Push2TallkApp/Push2TallkApp.xcodeproj/xcuserdata/*
+MediaWS/OpenCore-AMR/OpenCore-AMR.xcodeproj/xcuserdata/*
+MediaWS/Reachability/Reachability.xcodeproj/xcuserdata/*
+MediaWS/Push2TallkApp/Push2TallkApp/Dependencies/Libnice.xcodeproj/xcuserdata/*
+MediaWS/Push2TallkApp/Push2TallkApp/Dependencies/Opus.xcodeproj/xcuserdata/*
+MediaWS/Push2TallkApp/Push2TallkApp/Dependencies/Libnice.xcodeproj/*
+MediaWS/Push2TallkApp/Push2TallkApp/Dependencies/Opus.xcodeproj/*
