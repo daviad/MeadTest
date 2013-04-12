@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FoundWorkingCopyPaths</key>
+	<array>
+		<string>/Users/dingxiuwei/Desktop/例子/MeadTest</string>
+	</array>
+	<key>LastWorkingCopyScanDate</key>
+	<date>2013-04-11T06:27:05Z</date>
+	<key>MissingFilePaths</key>
+	<array>
+		<string>/Users/dingxiuwei/Desktop/例子/MeadTest/MediaWS/RTPLib/build/Release-iphoneos/libRTPLib.a</string>
+	</array>
+	<key>Version</key>
+	<integer>4</integer>
+</dict>
+</plist>
