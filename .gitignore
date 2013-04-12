@@ -10,23 +10,16 @@ MediaWS/Push2TallkApp/Push2TallkApp/Dependencies/Libnice.xcodeproj/*
 MediaWS/Push2TallkApp/Push2TallkApp/Dependencies/Opus.xcodeproj/*
 MediaWS/DerivedData/*
 
-MediaWS/Libnice/Libnice.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
+MediaWS/Libnice/Libnice.xcodeproj/xcuserdata/*
 
-MediaWS/Libnice/Libnice.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
+MediaWS/Opus/Opus.xcodeproj/xcuserdata/*
 
-MediaWS/Opus/Opus.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
+MediaWS/PureUtilities/PureUtilities.xcodeproj/xcuserdata/*
+MediaWS/RTPLib/RTPLib.xcodeproj/xcuserdata/*
 
-MediaWS/PureUtilities/PureUtilities.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
+MediaWS/Utilities/Utilities.xcodeproj/xcuserdata/*
 
-MediaWS/RTPLib/RTPLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
-
-MediaWS/RTPLib/RTPLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
-
-MediaWS/Utilities/Utilities.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
-
-MediaWS/Utilities/Utilities.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
-
-MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb
+MediaWS/MediaSenderApp/DerivedData/*
 
 MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb.strings-cmp
 
