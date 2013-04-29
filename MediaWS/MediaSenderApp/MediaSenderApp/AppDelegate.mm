@@ -62,7 +62,23 @@ using namespace std;
 using namespace jrtplib;
 
 
-
+void HexOutput(const char* buf, size_t len)
+{
+    printf("The Hex output of data :\n");
+    for(size_t i=0; i<len; ++i)
+    {
+        unsigned char c = buf[i]; // must use unsigned char to print >128 value
+        if( c< 16)
+        {
+            printf("0%x", c);
+        }
+        else
+        {
+            printf("%x", c);
+        }
+    }
+    printf("\n");
+}
 
 
 @interface AppDelegate()
@@ -93,6 +109,7 @@ using namespace jrtplib;
     //audio
     NSMutableData *audioData;
     TalkSender *tallSender;
+    
     
 }
 
@@ -913,8 +930,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         
         
         
-        AudioStreamBasicDescription descPCMFormat;
-        
+        AudioStreamBasicDescription descPCMFormat={0};
+        CMFormatDescriptionRef descPCMFormatRef =  CMSampleBufferGetFormatDescription(sampleBuffer);
+        //descPCMFormat = descPCMFormatRef->
         descPCMFormat.mFormatID         = kAudioFormatLinearPCM;
         descPCMFormat.mFormatFlags      = 0xc;
         descPCMFormat.mSampleRate       = 44100;
@@ -930,17 +948,24 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         
         //        descPCMFormat.mFormatFlags      = kAudioFormatFlagsAudioUnitCanonical;
         
-        AudioStreamBasicDescription descAACFormat;
+        AudioStreamBasicDescription descAACFormat = {0};
         descAACFormat.mSampleRate       = 44100;
         descAACFormat.mChannelsPerFrame = 1;
-        descAACFormat.mBitsPerChannel   = 16;
-        descAACFormat.mBytesPerPacket   = 2;
-        descAACFormat.mFramesPerPacket  = 1;
-        descAACFormat.mBytesPerPacket   = 2;
-        descAACFormat.mBytesPerFrame    = 2;
+        //        descAACFormat.mBitsPerChannel   = 16;
+        //        descAACFormat.mBytesPerPacket   = 2;
+        //        descAACFormat.mFramesPerPacket  = 1;
+        //        descAACFormat.mBytesPerPacket   = 2;
+        //        descAACFormat.mBytesPerFrame    = 2;
         
         descAACFormat.mFormatID         = kAudioFormatMPEG4AAC;
-        descAACFormat.mFormatFlags      = 0;
+        //        descAACFormat.mFormatFlags      = kLinearPCMFormatFlagIsPacked | kLinearPCMFormatFlagIsSignedInteger;
+        
+        size_t sz = sizeof(descAACFormat);
+        OSStatus ss =  AudioFormatGetProperty(kAudioFormatProperty_FormatInfo, 0, NULL, &sz, &descAACFormat);
+        if (ss !=0)
+        {
+            
+        }
         
         AudioConverterRef _converter;
         
@@ -953,30 +978,40 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         }
         
         
-        OSStatus st = AudioConverterNewSpecific(&descPCMFormat, &descPCMFormat, 1, description, &_converter);
+        OSStatus st = AudioConverterNewSpecific(&descPCMFormat, &descAACFormat, 2, description, &_converter);
         if (st)
         {
             NSLog(@"error creating audio converter: %ld",st);
             
         }
         
-        UInt32 ouputPacketsCount = 1;
+        UInt32 ouputPacketsCount = 2;
         AudioStreamPacketDescription resultDesc = {0};
         AudioBufferList    *aacBufferList = AllocateABL(1, pcmBufferList.mBuffers[0].mDataByteSize, NO, 1);
        
         
-                     void* readBuffer = (void *)malloc( pcmBufferList.mBuffers[0].mDataByteSize);
+                   //  void* readBuffer = (void *)malloc( pcmBufferList.mBuffers[0].mDataByteSize);
         
-                     memcpy(readBuffer, pcmBufferList.mBuffers[0].mData, pcmBufferList.mBuffers[0].mDataByteSize);
+                    // memcpy(readBuffer, pcmBufferList.mBuffers[0].mData, pcmBufferList.mBuffers[0].mDataByteSize);
 
         
-        st = AudioConverterFillComplexBuffer(_converter, encoderDataProc, readBuffer, &ouputPacketsCount, aacBufferList,&resultDesc);
+          st = AudioConverterFillComplexBuffer(_converter, encoderDataProc, &pcmBufferList, &ouputPacketsCount, aacBufferList,&resultDesc);
         if (0 == st)
         {
             // ... send bufferList.mBuffers[0].mDataByteSize bytes from ...
             
+            NSLog(@"origin data_______");
+            HexOutput((const char*)pcmBufferList.mBuffers[0].mData, pcmBufferList.mBuffers[0].mDataByteSize);
+            NSLog(@"origin data++++++++++");
             NSLog(@"RTP:SEND raw data length : %d", (unsigned int)(*aacBufferList).mBuffers[0].mDataByteSize);
             int status = sess.SendPacket((void *)(*aacBufferList).mBuffers[0].mData, (*aacBufferList).mBuffers[0].mDataByteSize);
+            NSLog(@"++++++++++++++++++++++++b");
+            NSLog(@"resultDesc.mStartOffset=%llu resultDesc.mDataByteSize=%u aacBufferList->mBuffers[0].mData=%s",resultDesc.mStartOffset,(unsigned int)resultDesc.mDataByteSize,aacBufferList->mBuffers[0].mData);
+           HexOutput((const char*)aacBufferList->mBuffers[0].mData, resultDesc.mDataByteSize);
+           NSLog(@"++++++++++++++++++++++++e");
+            
+            [audioData appendBytes:(char *)(aacBufferList->mBuffers[0].mData) + resultDesc.mStartOffset length:resultDesc.mDataByteSize];
+
             if (status)
             {
                 NSLog(@"RTP:SEND error : %s", RTPGetErrorString(status).c_str());
@@ -1144,11 +1179,11 @@ OSStatus encoderDataProc(AudioConverterRef inAudioConverter,
                          void* inUserData)
 {
         NSLog(@"_encoderDataProc has been called");
-   // AudioBufferList *pcmList = (AudioBufferList*)inUserData;
+    AudioBufferList *pcmList = (AudioBufferList*)inUserData;
         // put the data pointer into the buffer list
-    	ioData->mBuffers[0].mData = inUserData;
-    	ioData->mBuffers[0].mDataByteSize = 2048;
-    	ioData->mBuffers[0].mNumberChannels = 1;
+	ioData->mBuffers[0].mData = pcmList->mBuffers[0].mData;
+    ioData->mBuffers[0].mDataByteSize = pcmList->mBuffers[0].mDataByteSize;
+    ioData->mBuffers[0].mNumberChannels = 1;
 
         // don't forget the packet descriptions if required
 //    	if (outDataPacketDescription) {
@@ -1490,10 +1525,6 @@ NSData* imageToBuffer( CMSampleBufferRef source)
     
     
     audioData = [[NSMutableData alloc] init];
-    //<<<<<<< HEAD
-    //    tallSender = [[TalkSender alloc] initWithSampleRate:44100
-    //                                            talkManager:nil];
-    //=======
     sendAudioQueue = dispatch_queue_create("send audio queue", NULL);
     
     
@@ -1566,6 +1597,11 @@ NSData* imageToBuffer( CMSampleBufferRef source)
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory=[paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"test.aac"];
+    [audioData writeToFile:path atomically:YES];
+    NSLog(@"saved=====");
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
