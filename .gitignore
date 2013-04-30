@@ -21,16 +21,18 @@ MediaWS/Utilities/Utilities.xcodeproj/xcuserdata/*
 
 MediaWS/MediaSenderApp/DerivedData/*
 
-MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb.strings-cmp
-
-MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb.strings-file
-
-MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb.strings-dir
-
-MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb.strings-res
-
-MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/Index/MediaSenderApp.xcindex/db.xcindexdb.strings-sym
-
 MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/info.plist
 
 MediaWS/MediaSenderApp/DerivedData/MediaSenderApp/scm.plist
+
+MediaWS/OggLib/OggLib.xcodeproj/xcuserdata/*
+
+MediaWS/SpeexLib/SpeexLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/SpeexLib.xcscheme
+
+MediaWS/SpeexLib/SpeexLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
+
+MediaWS/SpeexLib/OggLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/OggLib.xcscheme
+
+MediaWS/SpeexLib/OggLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist
+
+MediaWS/SpeexLib/OggLib.xcodeproj/xcuserdata/yefeng.xcuserdatad/xcschemes/xcschememanagement.plist

@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52229312172FC5CC00CDD6D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52229311172FC5CC00CDD6D3 /* Foundation.framework */; };
+		52229317172FC5CC00CDD6D3 /* SpeexLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52229316172FC5CC00CDD6D3 /* SpeexLib.h */; };
+		52229319172FC5CC00CDD6D3 /* SpeexLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 52229318172FC5CC00CDD6D3 /* SpeexLib.m */; };
+		52229338172FC6D100CDD6D3 /* getopt.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229331172FC6D100CDD6D3 /* getopt.c */; };
+		52229339172FC6D100CDD6D3 /* getopt1.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229332172FC6D100CDD6D3 /* getopt1.c */; };
+		5222933A172FC6D100CDD6D3 /* skeleton.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229333172FC6D100CDD6D3 /* skeleton.c */; };
+		5222933B172FC6D100CDD6D3 /* speexdec.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229334172FC6D100CDD6D3 /* speexdec.c */; };
+		5222933C172FC6D100CDD6D3 /* speexenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229335172FC6D100CDD6D3 /* speexenc.c */; };
+		5222933D172FC6D100CDD6D3 /* wav_io.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229336172FC6D100CDD6D3 /* wav_io.c */; };
+		5222933E172FC6D100CDD6D3 /* wave_out.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229337172FC6D100CDD6D3 /* wave_out.c */; };
+		527963A7172FC83800CE2052 /* libOggLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 527963A6172FC83800CE2052 /* libOggLib.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5222930C172FC5CC00CDD6D3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				52229317172FC5CC00CDD6D3 /* SpeexLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5222930E172FC5CC00CDD6D3 /* libSpeexLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpeexLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		52229311172FC5CC00CDD6D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		52229315172FC5CC00CDD6D3 /* SpeexLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpeexLib-Prefix.pch"; sourceTree = "<group>"; };
+		52229316172FC5CC00CDD6D3 /* SpeexLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeexLib.h; sourceTree = "<group>"; };
+		52229318172FC5CC00CDD6D3 /* SpeexLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeexLib.m; sourceTree = "<group>"; };
+		52229320172FC6BC00CDD6D3 /* getopt_win.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getopt_win.h; sourceTree = "<group>"; };
+		52229321172FC6BC00CDD6D3 /* skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skeleton.h; sourceTree = "<group>"; };
+		52229322172FC6BC00CDD6D3 /* speex_bits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_bits.h; sourceTree = "<group>"; };
+		52229323172FC6BC00CDD6D3 /* speex_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_buffer.h; sourceTree = "<group>"; };
+		52229324172FC6BC00CDD6D3 /* speex_callbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_callbacks.h; sourceTree = "<group>"; };
+		52229325172FC6BC00CDD6D3 /* speex_config_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_config_types.h; sourceTree = "<group>"; };
+		52229326172FC6BC00CDD6D3 /* speex_echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_echo.h; sourceTree = "<group>"; };
+		52229327172FC6BC00CDD6D3 /* speex_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_header.h; sourceTree = "<group>"; };
+		52229328172FC6BC00CDD6D3 /* speex_jitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_jitter.h; sourceTree = "<group>"; };
+		52229329172FC6BC00CDD6D3 /* speex_preprocess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_preprocess.h; sourceTree = "<group>"; };
+		5222932A172FC6BC00CDD6D3 /* speex_resampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_resampler.h; sourceTree = "<group>"; };
+		5222932B172FC6BC00CDD6D3 /* speex_stereo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_stereo.h; sourceTree = "<group>"; };
+		5222932C172FC6BC00CDD6D3 /* speex_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex_types.h; sourceTree = "<group>"; };
+		5222932D172FC6BC00CDD6D3 /* speex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = speex.h; sourceTree = "<group>"; };
+		5222932E172FC6BC00CDD6D3 /* SpeexLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeexLib.h; sourceTree = "<group>"; };
+		5222932F172FC6BC00CDD6D3 /* wav_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav_io.h; sourceTree = "<group>"; };
+		52229330172FC6BC00CDD6D3 /* wave_out.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wave_out.h; sourceTree = "<group>"; };
+		52229331172FC6D100CDD6D3 /* getopt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getopt.c; sourceTree = "<group>"; };
+		52229332172FC6D100CDD6D3 /* getopt1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getopt1.c; sourceTree = "<group>"; };
+		52229333172FC6D100CDD6D3 /* skeleton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = skeleton.c; sourceTree = "<group>"; };
+		52229334172FC6D100CDD6D3 /* speexdec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = speexdec.c; sourceTree = "<group>"; };
+		52229335172FC6D100CDD6D3 /* speexenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = speexenc.c; sourceTree = "<group>"; };
+		52229336172FC6D100CDD6D3 /* wav_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wav_io.c; sourceTree = "<group>"; };
+		52229337172FC6D100CDD6D3 /* wave_out.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave_out.c; sourceTree = "<group>"; };
+		527963A5172FC82A00CE2052 /* OggLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = OggLib.xcodeproj; path = ../OggLib/OggLib.xcodeproj; sourceTree = "<group>"; };
+		527963A6172FC83800CE2052 /* libOggLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOggLib.a; path = "../DerivedData/Build/Products/Debug-iphoneos/libOggLib.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5222930B172FC5CC00CDD6D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527963A7172FC83800CE2052 /* libOggLib.a in Frameworks */,
+				52229312172FC5CC00CDD6D3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52229305172FC5CC00CDD6D3 = {
+			isa = PBXGroup;
+			children = (
+				527963A6172FC83800CE2052 /* libOggLib.a */,
+				527963A5172FC82A00CE2052 /* OggLib.xcodeproj */,
+				52229313172FC5CC00CDD6D3 /* SpeexLib */,
+				52229310172FC5CC00CDD6D3 /* Frameworks */,
+				5222930F172FC5CC00CDD6D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5222930F172FC5CC00CDD6D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5222930E172FC5CC00CDD6D3 /* libSpeexLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52229310172FC5CC00CDD6D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52229311172FC5CC00CDD6D3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52229313172FC5CC00CDD6D3 /* SpeexLib */ = {
+			isa = PBXGroup;
+			children = (
+				5222931F172FC67D00CDD6D3 /* speex */,
+				52229316172FC5CC00CDD6D3 /* SpeexLib.h */,
+				52229318172FC5CC00CDD6D3 /* SpeexLib.m */,
+				52229331172FC6D100CDD6D3 /* getopt.c */,
+				52229332172FC6D100CDD6D3 /* getopt1.c */,
+				52229333172FC6D100CDD6D3 /* skeleton.c */,
+				52229334172FC6D100CDD6D3 /* speexdec.c */,
+				52229335172FC6D100CDD6D3 /* speexenc.c */,
+				52229336172FC6D100CDD6D3 /* wav_io.c */,
+				52229337172FC6D100CDD6D3 /* wave_out.c */,
+				52229314172FC5CC00CDD6D3 /* Supporting Files */,
+			);
+			path = SpeexLib;
+			sourceTree = "<group>";
+		};
+		52229314172FC5CC00CDD6D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52229315172FC5CC00CDD6D3 /* SpeexLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5222931F172FC67D00CDD6D3 /* speex */ = {
+			isa = PBXGroup;
+			children = (
+				52229320172FC6BC00CDD6D3 /* getopt_win.h */,
+				52229321172FC6BC00CDD6D3 /* skeleton.h */,
+				52229322172FC6BC00CDD6D3 /* speex_bits.h */,
+				52229323172FC6BC00CDD6D3 /* speex_buffer.h */,
+				52229324172FC6BC00CDD6D3 /* speex_callbacks.h */,
+				52229325172FC6BC00CDD6D3 /* speex_config_types.h */,
+				52229326172FC6BC00CDD6D3 /* speex_echo.h */,
+				52229327172FC6BC00CDD6D3 /* speex_header.h */,
+				52229328172FC6BC00CDD6D3 /* speex_jitter.h */,
+				52229329172FC6BC00CDD6D3 /* speex_preprocess.h */,
+				5222932A172FC6BC00CDD6D3 /* speex_resampler.h */,
+				5222932B172FC6BC00CDD6D3 /* speex_stereo.h */,
+				5222932C172FC6BC00CDD6D3 /* speex_types.h */,
+				5222932D172FC6BC00CDD6D3 /* speex.h */,
+				5222932E172FC6BC00CDD6D3 /* SpeexLib.h */,
+				5222932F172FC6BC00CDD6D3 /* wav_io.h */,
+				52229330172FC6BC00CDD6D3 /* wave_out.h */,
+			);
+			path = speex;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5222930D172FC5CC00CDD6D3 /* SpeexLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5222931C172FC5CC00CDD6D3 /* Build configuration list for PBXNativeTarget "SpeexLib" */;
+			buildPhases = (
+				5222930A172FC5CC00CDD6D3 /* Sources */,
+				5222930B172FC5CC00CDD6D3 /* Frameworks */,
+				5222930C172FC5CC00CDD6D3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeexLib;
+			productName = SpeexLib;
+			productReference = 5222930E172FC5CC00CDD6D3 /* libSpeexLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52229306172FC5CC00CDD6D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = daviad;
+			};
+			buildConfigurationList = 52229309172FC5CC00CDD6D3 /* Build configuration list for PBXProject "SpeexLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 52229305172FC5CC00CDD6D3;
+			productRefGroup = 5222930F172FC5CC00CDD6D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5222930D172FC5CC00CDD6D3 /* SpeexLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5222930A172FC5CC00CDD6D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52229319172FC5CC00CDD6D3 /* SpeexLib.m in Sources */,
+				52229338172FC6D100CDD6D3 /* getopt.c in Sources */,
+				52229339172FC6D100CDD6D3 /* getopt1.c in Sources */,
+				5222933A172FC6D100CDD6D3 /* skeleton.c in Sources */,
+				5222933B172FC6D100CDD6D3 /* speexdec.c in Sources */,
+				5222933C172FC6D100CDD6D3 /* speexenc.c in Sources */,
+				5222933D172FC6D100CDD6D3 /* wav_io.c in Sources */,
+				5222933E172FC6D100CDD6D3 /* wave_out.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5222931A172FC5CC00CDD6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5222931B172FC5CC00CDD6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5222931D172FC5CC00CDD6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SpeexLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpeexLib/SpeexLib-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../DerivedData/Build/Products/Debug-iphoneos\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = $SRCROOT/../OggLib/OggLib/;
+			};
+			name = Debug;
+		};
+		5222931E172FC5CC00CDD6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SpeexLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpeexLib/SpeexLib-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../DerivedData/Build/Products/Debug-iphoneos\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = $SRCROOT/../OggLib/OggLib/;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52229309172FC5CC00CDD6D3 /* Build configuration list for PBXProject "SpeexLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5222931A172FC5CC00CDD6D3 /* Debug */,
+				5222931B172FC5CC00CDD6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5222931C172FC5CC00CDD6D3 /* Build configuration list for PBXNativeTarget "SpeexLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5222931D172FC5CC00CDD6D3 /* Debug */,
+				5222931E172FC5CC00CDD6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52229306172FC5CC00CDD6D3 /* Project object */;
+}

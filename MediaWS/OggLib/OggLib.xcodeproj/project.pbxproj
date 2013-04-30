@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		522292ED172FC52C00CDD6D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522292EC172FC52C00CDD6D3 /* Foundation.framework */; };
+		522292F2172FC52C00CDD6D3 /* OggLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 522292F1172FC52C00CDD6D3 /* OggLib.h */; };
+		522292F4172FC52C00CDD6D3 /* OggLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 522292F3172FC52C00CDD6D3 /* OggLib.m */; };
+		52229301172FC57A00CDD6D3 /* bitwise.c in Sources */ = {isa = PBXBuildFile; fileRef = 522292FF172FC57A00CDD6D3 /* bitwise.c */; };
+		52229302172FC57A00CDD6D3 /* framing.c in Sources */ = {isa = PBXBuildFile; fileRef = 52229300172FC57A00CDD6D3 /* framing.c */; };
+		52229304172FC5A900CDD6D3 /* ogg.h in Headers */ = {isa = PBXBuildFile; fileRef = 522292FD172FC56800CDD6D3 /* ogg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		522292E7172FC52C00CDD6D3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				522292F2172FC52C00CDD6D3 /* OggLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		522292E9172FC52C00CDD6D3 /* libOggLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOggLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		522292EC172FC52C00CDD6D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		522292F0172FC52C00CDD6D3 /* OggLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OggLib-Prefix.pch"; sourceTree = "<group>"; };
+		522292F1172FC52C00CDD6D3 /* OggLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OggLib.h; sourceTree = "<group>"; };
+		522292F3172FC52C00CDD6D3 /* OggLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OggLib.m; sourceTree = "<group>"; };
+		522292FB172FC56800CDD6D3 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		522292FC172FC56800CDD6D3 /* config_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config_types.h; sourceTree = "<group>"; };
+		522292FD172FC56800CDD6D3 /* ogg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogg.h; sourceTree = "<group>"; };
+		522292FE172FC56800CDD6D3 /* os_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os_types.h; sourceTree = "<group>"; };
+		522292FF172FC57A00CDD6D3 /* bitwise.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitwise.c; sourceTree = "<group>"; };
+		52229300172FC57A00CDD6D3 /* framing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = framing.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		522292E6172FC52C00CDD6D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				522292ED172FC52C00CDD6D3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		522292E0172FC52C00CDD6D3 = {
+			isa = PBXGroup;
+			children = (
+				522292EE172FC52C00CDD6D3 /* OggLib */,
+				522292EB172FC52C00CDD6D3 /* Frameworks */,
+				522292EA172FC52C00CDD6D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		522292EA172FC52C00CDD6D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				522292E9172FC52C00CDD6D3 /* libOggLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		522292EB172FC52C00CDD6D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				522292EC172FC52C00CDD6D3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		522292EE172FC52C00CDD6D3 /* OggLib */ = {
+			isa = PBXGroup;
+			children = (
+				522292FA172FC56800CDD6D3 /* ogg */,
+				522292F1172FC52C00CDD6D3 /* OggLib.h */,
+				522292FF172FC57A00CDD6D3 /* bitwise.c */,
+				52229300172FC57A00CDD6D3 /* framing.c */,
+				522292F3172FC52C00CDD6D3 /* OggLib.m */,
+				522292EF172FC52C00CDD6D3 /* Supporting Files */,
+			);
+			path = OggLib;
+			sourceTree = "<group>";
+		};
+		522292EF172FC52C00CDD6D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				522292F0172FC52C00CDD6D3 /* OggLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		522292FA172FC56800CDD6D3 /* ogg */ = {
+			isa = PBXGroup;
+			children = (
+				522292FB172FC56800CDD6D3 /* config.h */,
+				522292FC172FC56800CDD6D3 /* config_types.h */,
+				522292FD172FC56800CDD6D3 /* ogg.h */,
+				522292FE172FC56800CDD6D3 /* os_types.h */,
+			);
+			path = ogg;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		52229303172FC59F00CDD6D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52229304172FC5A900CDD6D3 /* ogg.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		522292E8172FC52C00CDD6D3 /* OggLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 522292F7172FC52C00CDD6D3 /* Build configuration list for PBXNativeTarget "OggLib" */;
+			buildPhases = (
+				522292E5172FC52C00CDD6D3 /* Sources */,
+				522292E6172FC52C00CDD6D3 /* Frameworks */,
+				522292E7172FC52C00CDD6D3 /* CopyFiles */,
+				52229303172FC59F00CDD6D3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OggLib;
+			productName = OggLib;
+			productReference = 522292E9172FC52C00CDD6D3 /* libOggLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		522292E1172FC52C00CDD6D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = daviad;
+			};
+			buildConfigurationList = 522292E4172FC52C00CDD6D3 /* Build configuration list for PBXProject "OggLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 522292E0172FC52C00CDD6D3;
+			productRefGroup = 522292EA172FC52C00CDD6D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				522292E8172FC52C00CDD6D3 /* OggLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		522292E5172FC52C00CDD6D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				522292F4172FC52C00CDD6D3 /* OggLib.m in Sources */,
+				52229301172FC57A00CDD6D3 /* bitwise.c in Sources */,
+				52229302172FC57A00CDD6D3 /* framing.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		522292F5172FC52C00CDD6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		522292F6172FC52C00CDD6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		522292F8172FC52C00CDD6D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/OggLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OggLib/OggLib-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		522292F9172FC52C00CDD6D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/OggLib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OggLib/OggLib-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		522292E4172FC52C00CDD6D3 /* Build configuration list for PBXProject "OggLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				522292F5172FC52C00CDD6D3 /* Debug */,
+				522292F6172FC52C00CDD6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		522292F7172FC52C00CDD6D3 /* Build configuration list for PBXNativeTarget "OggLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				522292F8172FC52C00CDD6D3 /* Debug */,
+				522292F9172FC52C00CDD6D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 522292E1172FC52C00CDD6D3 /* Project object */;
+}

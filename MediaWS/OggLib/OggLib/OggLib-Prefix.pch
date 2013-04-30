@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'OggLib' target in the 'OggLib' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

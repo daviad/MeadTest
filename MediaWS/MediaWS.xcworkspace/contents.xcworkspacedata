@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SpeexLib/SpeexLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OggLib/OggLib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MediaSenderApp/MediaSenderApp.xcodeproj">
    </FileRef>
    <FileRef
