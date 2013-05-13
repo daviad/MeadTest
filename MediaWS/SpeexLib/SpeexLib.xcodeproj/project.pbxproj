@@ -20,6 +20,16 @@
 		527963A7172FC83800CE2052 /* libOggLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 527963A6172FC83800CE2052 /* libOggLib.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E452915017410C7D00A3C0BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 527963A5172FC82A00CE2052 /* OggLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 522292E9172FC52C00CDD6D3;
+			remoteInfo = OggLib;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		5222930C172FC5CC00CDD6D3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -63,7 +73,7 @@
 		52229335172FC6D100CDD6D3 /* speexenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = speexenc.c; sourceTree = "<group>"; };
 		52229336172FC6D100CDD6D3 /* wav_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wav_io.c; sourceTree = "<group>"; };
 		52229337172FC6D100CDD6D3 /* wave_out.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave_out.c; sourceTree = "<group>"; };
-		527963A5172FC82A00CE2052 /* OggLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = file; name = OggLib.xcodeproj; path = ../OggLib/OggLib.xcodeproj; sourceTree = "<group>"; };
+		527963A5172FC82A00CE2052 /* OggLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OggLib.xcodeproj; path = ../OggLib/OggLib.xcodeproj; sourceTree = "<group>"; };
 		527963A6172FC83800CE2052 /* libOggLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOggLib.a; path = "../DerivedData/Build/Products/Debug-iphoneos/libOggLib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +167,14 @@
 			path = speex;
 			sourceTree = "<group>";
 		};
+		E452914D17410C7D00A3C0BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E452915117410C7D00A3C0BC /* libOggLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,12 +214,28 @@
 			mainGroup = 52229305172FC5CC00CDD6D3;
 			productRefGroup = 5222930F172FC5CC00CDD6D3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E452914D17410C7D00A3C0BC /* Products */;
+					ProjectRef = 527963A5172FC82A00CE2052 /* OggLib.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5222930D172FC5CC00CDD6D3 /* SpeexLib */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E452915117410C7D00A3C0BC /* libOggLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOggLib.a;
+			remoteRef = E452915017410C7D00A3C0BC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5222930A172FC5CC00CDD6D3 /* Sources */ = {
