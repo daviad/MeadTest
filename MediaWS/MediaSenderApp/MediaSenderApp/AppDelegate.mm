@@ -80,7 +80,7 @@ static void CheckError(OSStatus error, const char *operation)
     
     fprintf(stderr, "Error: %s (%s)\n", operation, str);
     
-    exit(1);
+   // exit(1);
 }
 
 void HexOutput(const char* buf, size_t len)
@@ -1021,15 +1021,15 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         {
             // ... send bufferList.mBuffers[0].mDataByteSize bytes from ...
             
-            NSLog(@"origin data_______");
+            NSLog(@"origin data++++++ begin");
             HexOutput((const char*)pcmBufferList.mBuffers[0].mData, pcmBufferList.mBuffers[0].mDataByteSize);
-            NSLog(@"origin data++++++++++");
+            NSLog(@"origin data++++++++++ end ");
             NSLog(@"RTP:SEND raw data length : %d", (unsigned int)(*aacBufferList).mBuffers[0].mDataByteSize);
             int status = sess.SendPacket((void *)(*aacBufferList).mBuffers[0].mData, (*aacBufferList).mBuffers[0].mDataByteSize);
-            NSLog(@"++++++++++++++++++++++++b");
+            NSLog(@"++++++++++++++++++++++++begin");
             NSLog(@"resultDesc.mStartOffset=%llu resultDesc.mDataByteSize=%u aacBufferList->mBuffers[0].mData=%s",resultDesc.mStartOffset,(unsigned int)resultDesc.mDataByteSize,aacBufferList->mBuffers[0].mData);
            HexOutput((const char*)aacBufferList->mBuffers[0].mData, resultDesc.mDataByteSize);
-           NSLog(@"++++++++++++++++++++++++e");
+           NSLog(@"++++++++++++++++++++++++end");
             
             [audioData appendBytes:(char *)(aacBufferList->mBuffers[0].mData) + resultDesc.mStartOffset length:resultDesc.mDataByteSize];
 
